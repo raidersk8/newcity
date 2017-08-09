@@ -1,0 +1,29 @@
+<svg width="33" height="40" viewBox="0 0 33 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>pattern</title>
+<desc>Created using Figma</desc>
+<g id="Canvas">
+<g id="pattern">
+<g id="Vector">
+<use xlink:href="#path0_fill" fill="#009ECC"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(6.25264 0)" fill="#F0C900"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(12.5921 0)" fill="#9E0070"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_fill" transform="translate(19.0184 0)" fill="#C20080"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path3_fill" transform="translate(28.1368 0)" fill="#DBD400"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 4.68947 0L 0 0L 0 40L 4.68947 40L 4.68947 0Z"/>
+<path id="path1_fill" d="M 4.86315 0L 0 0L 0 40L 4.86315 40L 4.86315 0Z"/>
+<path id="path2_fill" d="M 7.55526 0L 0 0L 0 40L 7.55526 40L 7.55526 0Z"/>
+<path id="path3_fill" d="M 4.86315 0L 0 0L 0 40L 4.86315 40L 4.86315 0Z"/>
+</defs>
+</svg>

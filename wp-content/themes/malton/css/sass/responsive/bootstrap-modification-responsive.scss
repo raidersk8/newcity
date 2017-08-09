@@ -1,0 +1,24 @@
+@media (max-width: $media-md-min-width) {
+	.text-left-md {
+		text-align: left;
+	}
+	.text-center-sm {
+		text-align: center;
+	}
+}
+@media (max-width: $media-sm-min-width) {
+	.text-center-xs {
+		text-align: center;
+	}
+	.text-left-xs {
+		text-align: left;
+	}
+	.yes-p-xs {
+		padding-right: 15px !important;
+		padding-left: 15px !important;
+	}
+	.no-p-xs {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}

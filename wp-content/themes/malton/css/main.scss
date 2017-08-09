@@ -1,0 +1,38 @@
+//Функции и переменные
+@import 'sass/root/setting';
+//bootstrap
+@import 'sass/plagins/bootstrap';
+@import 'sass/plagins/animate';
+//Тут добавляем или модифицируем класы для каждого сайта
+@import 'sass/plagins/bootstrap-modification';
+@import 'sass/plagins/font-awesome.min';
+//Вспомогательные стили для верстки 
+@import 'sass/root/addition-bootstrap';
+//Стандартные стили ворпресса
+@import 'sass/root/base-wordpress';
+
+//Основные стили темы
+@import 'sass/root/base';
+//Стили темы
+@import 'sass/template';
+@import 'sass/front-page';
+
+
+//Респонсивность
+@import 'sass/responsive/bootstrap-modification-responsive';
+
+//Мобильная версия
+
+//Плагины
+
+@import 'sass/plagins/fancybox';
+
+@import 'sass/plagins/fullPage';
+
+@import 'sass/plagins/bootstrap-select/bootstrap-select';
+
+@import 'sass/plagins/jquery-ui';
+
+@import 'sass/plagins/jcarousel.scss';
+
+@import 'sass/plagins/jquery.mCustomScrollbar.scss';

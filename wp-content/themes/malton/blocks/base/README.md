@@ -1,0 +1,2 @@
+# malton
+theme for wordpress

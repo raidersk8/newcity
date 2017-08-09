@@ -1,0 +1,49 @@
+.global-left-padding {
+	padding-left: 46px;
+}
+.light-content {
+	color: #fff;
+}
+.wrap-main-logo {
+	position: absolute;
+	left: 0;
+	top: 73px;
+	width: 100%;
+	z-index: 100;
+}
+.wrap-main-logo .logo {
+	display: inline-block;
+	width: 185px;
+	height: 74px;
+	background: url(../svg/logo.svg) top left no-repeat;
+}
+header {
+	position: relative;
+	padding: 8px 0 0;
+	height: 40px;
+	background: #2F281D;
+	z-index: 100;
+}
+header:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 33px;
+	height: 40px;
+	background: url(../svg/header-logo.svg) top left no-repeat;
+}
+header:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 33px;
+	height: 40px;
+	background: url(../svg/header-logo.svg) top left no-repeat;
+}
+header a {
+	color: $a-color-yellow;
+}

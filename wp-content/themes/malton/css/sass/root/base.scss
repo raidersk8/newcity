@@ -1,0 +1,52 @@
+.container {
+	//width: 1164px !important;
+}
+html, body {
+  position: relative;
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	color: $main-color;
+	background: url(../img/template-main.png) center 0 no-repeat #fff;
+	//height: 6000px;
+}
+a {
+	color: $a-color;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+	color: $a-color;
+}
+a:visited {
+	color: #8F9280;
+}
+a:focus {
+    outline: 0;
+    outline-offset: 0px;
+}
+a:hover, a:focus {
+	color: $a-color;
+	text-decoration: none;
+}
+b, strong {
+    font-weight: 400;
+}
+sub, sup {
+    font-size: 64%;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+
+

@@ -1,0 +1,17 @@
+<svg width="22" height="22" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>exit</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1099 -2859)">
+<g id="exit">
+<g id="Vector 4">
+<use xlink:href="#path0_stroke" transform="translate(1100 2860)" fill="#4D4249"/>
+</g>
+<g id="Vector 4">
+<use xlink:href="#path0_stroke" transform="matrix(6.12323e-17 -1 1 6.12323e-17 1100 2880)" fill="#4D4249"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_stroke" d="M -0.707107 0.707107L 19.2929 20.7071L 20.7071 19.2929L 0.707107 -0.707107L -0.707107 0.707107Z"/>
+</defs>
+</svg>

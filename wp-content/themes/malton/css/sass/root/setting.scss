@@ -1,0 +1,178 @@
+/* {
+	-webkit-transition: all 0.5s ease-out 0s;
+     -moz-transition: all 0.5s ease-out 0s;
+     -o-transition: all 0.5s ease-out 0s;
+     transition: all 0.5s ease-out 0s;
+}*/
+$a-color: #C20080;
+$a-color-yellow: #F0C900;
+$main-color: #484848;
+$main-color-2: #E1CDC8;
+$main-bg: #fff;
+
+
+$media-lg-container: 1164px;
+$media-lg-min-width: $media-lg-container + 30px;
+
+$media-md-container: 970px;
+$media-md-min-width: $media-md-container + 22px;
+
+$media-sm-container: 750px;
+$media-sm-min-width: $media-sm-container + 18px;
+
+$media-md-max-width: 1200px;
+$media-xs-max-width: 768px;
+
+
+
+@mixin right-arrow ($border_width, $pxwidth, $pxheight, $color) {
+	width: $pxwidth;
+    height: $pxheight;
+	-moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+	border-bottom: none;
+    border-top: $border_width solid $color;
+    border-right: $border_width solid $color;
+	border-left: none;
+}
+@mixin left-arrow ($border_width, $pxwidth, $pxheight, $color) {
+	width: $pxwidth;
+    height: $pxheight;
+	-moz-transform:    rotate(-45deg);
+	-o-transform:      rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform:         rotate(-45deg);
+	border-bottom: none;
+	border-top: $border_width solid $color;
+	border-left: $border_width solid $color;
+	border-right: none;
+}
+
+@mixin top-arrow ($border_width, $pxwidth, $pxheight, $color) {
+	width: $pxwidth;
+    height: $pxheight;
+	-moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+	border-bottom: none;
+	border-top: $border_width solid $color;
+	border-left: $border_width solid $color;
+	border-right: none;
+}
+
+@mixin bottom-arrow ($border_width, $pxwidth, $pxheight, $color) {
+	width: $pxwidth;
+    height: $pxheight;
+	-moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+	border-top: none;
+	border-bottom: $border_width solid $color;
+	border-left: $border_width solid $color;
+	border-right: none;
+}
+//@include animation-transition (0.3s, all, ease-out);
+@mixin animation-transition ($speed, $styleName, $timingFunc) {
+	-webkit-transition: $styleName $speed $timingFunc 0s;
+     -moz-transition: $styleName $speed $timingFunc 0s;
+     -o-transition: $styleName $speed $timingFunc 0s;
+     transition: $styleName $speed $timingFunc 0s;
+}
+@mixin transform ($val) {
+	-moz-transform: $val;
+    -ms-transform: $val;
+    -webkit-transform: $val;
+    -o-transform: $val;
+    transform: $val;
+}
+@mixin cros-opacity ($val) {
+	-moz-opacity: $val; /* Mozilla 1.6 и ниже */
+	-khtml-opacity: $val; /* Konqueror 3.1, Safari 1.1 */
+	opacity: $val; /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+, Chrome 5+, IE 9+ */
+}
+@mixin border-radius ($val) {
+	-moz-border-radius: $val; /* Firefox */
+	-webkit-border-radius: $val; /* Safari, Chrome */
+	-khtml-border-radius: $val; /* KHTML */
+	border-radius: $val; /* CSS3 */
+}
+@mixin menu-icon ($color) {
+	.icon {
+		position: relative;
+		display: inline-block;
+		height: 14px;
+		width: 16px;
+		margin: 0;
+	}
+	.icon:before {
+		content: '';
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background: $color;
+		@include animation-transition (0.3s, all, ease-out);
+	}
+	.icon:after {
+		content: '';
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		background: $color;
+		@include animation-transition (0.3s, all, ease-out);
+	}
+	.icon .middle-line {
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		top: 50%;
+		left: 0;
+		background: $color;
+		margin-top: -1px;	
+	}
+}
+@mixin close-menu-icon () {	
+	.icon:before {
+		-moz-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		top: 6px;
+	}
+	.icon:after {
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+		bottom: 6px;
+	}
+	.icon .middle-line {
+		@include cros-opacity (0);
+	}
+}
+@mixin open-menu-icon () {	
+	.icon:before {
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		top: 0px;
+	}
+	.icon:after {
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		bottom: 0px;
+	}
+	.icon .middle-line {
+		@include cros-opacity (1);
+	}
+}

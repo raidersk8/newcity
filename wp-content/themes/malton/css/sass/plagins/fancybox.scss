@@ -1,0 +1,32 @@
+.fancybox-skin { 
+	background: #E5E5E5;
+}
+.fancybox-nav {
+	width: 36px;
+    right: -36px;
+}
+.fancybox-nav span {
+	visibility: visible;
+    background: none;
+}
+.fancybox-prev span {
+    left: 0;
+	@include left-arrow(2px, 11px, 11px, #4b5a5f);
+}
+.fancybox-next span {
+    right: 0;
+	@include right-arrow(2px, 11px, 11px, #4b5a5f);
+}
+.fancybox-prev {
+	width: 36px;
+	left: -36px;
+}
+
+.fancybox-close {
+	top: 10px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+	background: url(../svg/close.svg) center center no-repeat;
+	border: none;
+}

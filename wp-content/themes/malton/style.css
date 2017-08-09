@@ -1,0 +1,28 @@
+/*
+Theme Name: malton
+Theme URI: 
+Author: Roman
+Author URI: 
+Description: malton site
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: malton-template
+*/
+
+header .menu {
+    letter-spacing: 0.12em !important;
+}
+
+header .menu li {
+    padding: 0 5px;
+}
+
+.contacts {
+    background: url(img/contacts-bg.png) center top no-repeat;
+    text-align: center;
+    height: 1000px;
+    background-size: cover;
+    color: #25211e;
+    padding: 320px 0 74px;
+}
