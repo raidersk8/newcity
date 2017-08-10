@@ -16,18 +16,36 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-  <header class="text-center light-content">
-	Скидка 10% на 2-х комнатные квартиры при оформлении ипотеки до конца месяца! <a href="#">Подробнее</a>
-  </header>
-  <div class="wrap-main-logo">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="global-left-padding">
-					<a class="logo"></a>
+  <body class="">
+  <header class="light-content">
+	<div class="bottom-part">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="global-left-padding">
+						<a href="/" class="logo hide-before-show-window"></a>
+					</div>
+				</div>
+				<div class="col-xs-6 text-center">
+					<div class="row">
+						<div class="col-xs-2 col-xs-offset-8">
+							<a class="circle-btn" href="#">
+								<span class="circle"><img src="<?php echo get_bloginfo('template_url'); ?>/svg/map-marker.svg" alt="" /></span><br />
+								Калуга
+							</a>
+						</div>
+						<div class="col-xs-2">
+							<a class="circle-btn" href="#">
+								<span class="circle"><div class="menu-icon"><div class="icon"><div class="middle-line"></div></div></div></span><br />
+								Меню
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-  </div>
+	<div class="top-part text-center">
+		Скидка 10% на 2-х комнатные квартиры при оформлении ипотеки до конца месяца! <a href="#">Подробнее</a>
+	</div>
+  </header>

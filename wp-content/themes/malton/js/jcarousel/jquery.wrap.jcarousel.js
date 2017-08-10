@@ -8,7 +8,7 @@
 	</div>
 	<a href="#" class="jcarousel-prev"></a>
 	<a href="#" class="jcarousel-next"></a>
-	<div class="jcarousel-pagination"></div>
+	<div class="jcarousel-pagination" data-shownum="false"></div>
 	<div class="jcarousel-scroll-pagination"></div>
 </div>
 */

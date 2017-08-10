@@ -13,6 +13,58 @@
 	width: 100%;
 	height: 100%;	
 }
+.front-page .wrap-jcarousel .jcarousel-nav {
+	display: table;
+	position: absolute;
+	top: 0;
+	left: 30px;
+	height: 100%;
+	z-index: 10;
+}
+.front-page .wrap-jcarousel .jcarousel-nav .jcarousel-prev {
+	display: inline-block;
+	@include top-arrow (1px, 10px, 10px, #fff)
+}
+.front-page .wrap-jcarousel .jcarousel-nav .jcarousel-prev:hover {
+	border-color: #F0C900;
+}
+.front-page .wrap-jcarousel .jcarousel-nav .jcarousel-next {
+	display: inline-block;
+	@include bottom-arrow (1px, 10px, 10px, #fff)
+}
+.front-page .wrap-jcarousel .jcarousel-nav .jcarousel-next:hover {
+	border-color: #F0C900;
+}
+.front-page .wrap-jcarousel .jcarousel-nav .jcarousel-pagination a {
+	display: block;
+	border: 1px solid #fff;
+	background: rgba(255, 255, 255, 0.25);
+	@include border-radius(50%);
+	width: 12px;
+    height: 12px;
+	margin: 10px 0;
+	@include animation-transition (0.7s, all, ease-out, 0s);
+}
+.front-page .wrap-jcarousel .jcarousel-nav .jcarousel-pagination a:hover {
+	border-color: #F0C900;
+}
+.front-page .wrap-jcarousel .jcarousel-nav .jcarousel-pagination a.active {
+	border-color: #F0C900;
+}
+.front-page .wrap-jcarousel .jcarousel-nav .jcarousel-pagination a:before {
+	content: '';
+	display: block;
+	width: 10px;
+    height: 10px;
+	@include border-radius(50%);
+	border: 1px solid transparent;
+	background: transparent;
+	@include animation-transition (0.7s, all, ease-out, 0s);
+}
+.front-page .wrap-jcarousel .jcarousel-nav .jcarousel-pagination a.active:before {
+	border: 1px solid #C20080;
+	background: #F0C900;	
+}
 .front-page .wrap-jcarousel .jcarousel  {
 	position: absolute;
 	top: 0;
@@ -23,6 +75,14 @@
 .front-page .wrap-jcarousel .jcarousel ul li {
 	position: relative;
 	z-index: 1;
+	overflow: hidden;
+}
+.front-page .wrap-jcarousel .jcarousel ul li .wrap-left-slide-window {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
 }
 .front-page .wrap-jcarousel .jcarousel ul li.active {
 	z-index: 2;
@@ -113,4 +173,18 @@
 }
 .front-page .wrap-docs a span {
 	color: #fff;
+}
+.front-page .main-title {
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	margin-top: -46px;
+	z-index: 10;
+}
+.front-page .main-title .h3 {
+	font-weight: 900;
+	margin-bottom: 9px;
+}
+.front-page .main-title .text {
+	font-weight: 600;
 }

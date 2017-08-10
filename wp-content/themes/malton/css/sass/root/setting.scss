@@ -75,12 +75,12 @@ $media-xs-max-width: 768px;
 	border-left: $border_width solid $color;
 	border-right: none;
 }
-//@include animation-transition (0.3s, all, ease-out);
-@mixin animation-transition ($speed, $styleName, $timingFunc) {
-	-webkit-transition: $styleName $speed $timingFunc 0s;
-     -moz-transition: $styleName $speed $timingFunc 0s;
-     -o-transition: $styleName $speed $timingFunc 0s;
-     transition: $styleName $speed $timingFunc 0s;
+//@include animation-transition (0.3s, all, ease-out, 0s);
+@mixin animation-transition ($speed, $styleName, $timingFunc, $delay) {
+	-webkit-transition: $styleName $speed $timingFunc $delay;
+     -moz-transition: $styleName $speed $timingFunc $delay;
+     -o-transition: $styleName $speed $timingFunc $delay;
+     transition: $styleName $speed $timingFunc $delay;
 }
 @mixin transform ($val) {
 	-moz-transform: $val;
@@ -104,37 +104,37 @@ $media-xs-max-width: 768px;
 	.icon {
 		position: relative;
 		display: inline-block;
-		height: 14px;
-		width: 16px;
+		height: 11px;
+		width: 18px;
 		margin: 0;
 	}
 	.icon:before {
 		content: '';
 		position: absolute;
-		height: 2px;
+		height: 1px;
 		width: 100%;
 		top: 0;
 		left: 0;
-		background: $color;
-		@include animation-transition (0.3s, all, ease-out);
+		border-top: 1px solid $color;
+		@include animation-transition (0.3s, all, ease-out, 0s);
 	}
 	.icon:after {
 		content: '';
 		position: absolute;
-		height: 2px;
+		height: 1px;
 		width: 100%;
 		bottom: 0;
 		left: 0;
-		background: $color;
-		@include animation-transition (0.3s, all, ease-out);
+		border-bottom: 1px solid $color;
+		@include animation-transition (0.3s, all, ease-out, 0s);
 	}
 	.icon .middle-line {
 		position: absolute;
-		height: 2px;
+		height: 1px;
 		width: 100%;
 		top: 50%;
 		left: 0;
-		background: $color;
+		border-top: 1px solid #fff;
 		margin-top: -1px;	
 	}
 }

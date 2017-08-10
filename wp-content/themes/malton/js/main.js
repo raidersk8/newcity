@@ -70,3 +70,28 @@ function runMultipleFancyboxClose()
 	}
 }
 /*-------------------------------------------------------------------------------------------------------*/
+
+
+//Кнопки для показа выдвигающихся окон
+$('body').on('click', '.switch-slide-window', function() {
+	var idWindow = $(this).attr('href');
+	if($(idWindow).length) {
+		$(idWindow).addClass('active-window');
+		$('body').addClass('open-active-window');
+		function func() {
+		  $('body').addClass('end-open-active-window');
+		}
+		setTimeout(func, 1500);
+	}
+	
+	//Конец анимации 
+	
+});
+//Кнопки для закрытия выдвигающихся окон
+$('body').on('click', '.wrap-left-slide-window .left-slide-window .close-window', function() {
+	var left_slide_window = $(this).parents('.left-slide-window');
+	var wrap_left_slide_window = $(this).parents('.wrap-left-slide-window');
+	$('body').removeClass('end-open-active-window');
+	
+	
+});
