@@ -77,6 +77,7 @@ $('body').on('click', '.switch-slide-window', function() {
 	var idWindow = $(this).attr('href');
 	if($(idWindow).length) {
 		$(idWindow).addClass('active-window');
+		//Присваевам класс что начинаем открывать окно, в стилях стоит задержка анимации
 		$('body').addClass('open-active-window');
 		function func() {
 		  $('body').addClass('end-open-active-window');
@@ -91,7 +92,13 @@ $('body').on('click', '.switch-slide-window', function() {
 $('body').on('click', '.wrap-left-slide-window .left-slide-window .close-window', function() {
 	var left_slide_window = $(this).parents('.left-slide-window');
 	var wrap_left_slide_window = $(this).parents('.wrap-left-slide-window');
+	
 	$('body').removeClass('end-open-active-window');
-	
-	
+	$('body').removeClass('open-active-window');	
+	$('body').addClass('close-active-window');	
+	function func() {
+	  $('body').removeClass('close-active-window');	
+	  $('.active-window').removeClass('active-window');
+	}
+	setTimeout(func, 1500);
 });

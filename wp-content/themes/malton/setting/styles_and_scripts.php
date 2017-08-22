@@ -14,6 +14,8 @@ if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 	add_action( 'wp_enqueue_scripts', 'remove_head_scripts' );
 }
 function theme_name_scripts() {	
+	wp_deregister_script('jquery');
+	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js' );
 	remove_action('wp_head', 'wp_print_scripts');
 	remove_action('wp_head', 'wp_print_head_scripts', 9);
 	remove_action('wp_head', 'wp_enqueue_scripts', 1);
@@ -33,7 +35,7 @@ function theme_name_scripts() {
 	//Библиотека гугл карты
 	wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAoIhlfl0vA6Uv0DuIgbriry2cZYDbNw2g' );
 	//jquery
-	wp_enqueue_script( 'jquery-2', get_template_directory_uri() . '/js/jquery.min.js' );
+	//wp_enqueue_script( 'jquery-2', get_template_directory_uri() . '/js/jquery.min.js' );
 	
 	//ui-slider
 	wp_enqueue_script( 'jquery-ui', get_template_directory_uri() . '/js/jquery-ui/jquery-ui.min.js' );

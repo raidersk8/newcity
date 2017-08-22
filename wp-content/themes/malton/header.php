@@ -18,7 +18,11 @@
   </head>
   <body class="">
   <header class="light-content">
-	<div class="bottom-part">
+	<div class="top-part text-center">
+		Скидка 10% на 2-х комнатные квартиры при оформлении ипотеки до конца месяца! <a href="#">Подробнее</a>
+	</div>
+  </header>
+	<div class="main-control-panel">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-6">
@@ -26,7 +30,7 @@
 						<a href="/" class="logo hide-before-show-window"></a>
 					</div>
 				</div>
-				<div class="col-xs-6 text-center">
+				<div class="col-xs-6 text-center right-part">
 					<div class="row">
 						<div class="col-xs-2 col-xs-offset-8">
 							<a class="circle-btn" href="#">
@@ -45,7 +49,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="top-part text-center">
-		Скидка 10% на 2-х комнатные квартиры при оформлении ипотеки до конца месяца! <a href="#">Подробнее</a>
+	<div class="main-menu">
+		<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container_class' => 'menu', 'menu_class' => '' ) ); ?>
 	</div>
-  </header>

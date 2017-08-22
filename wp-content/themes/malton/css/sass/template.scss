@@ -4,24 +4,24 @@
 .light-content {
 	color: #fff;
 }
-header .bottom-part {
+.dark-content {
+	color: #484848;
+}
+.main-control-panel {
 	position: absolute;
-	height: 80px;
-    bottom: 0;
+    top: 66px;
     left: 0;
     width: 100%;
+	z-index: 100;
 }
-header .bottom-part .logo {
-	position: relative;
-	bottom: -106px;
+.main-control-panel .logo {
 	display: inline-block;
 	width: 185px;
 	height: 74px;
 	background: url(../svg/logo.svg) top left no-repeat;
 }
-header .bottom-part .circle-btn {
-	position: relative;
-    bottom: -121px;
+.main-control-panel .right-part {
+	    padding-top: 15px;
 }
 header {
 	position: relative;
@@ -79,9 +79,6 @@ footer a {
 footer .copyright {
 	background: url(../svg/footer-separator.svg) left top no-repeat;
 }
-.open-active-window.end-open-active-window footer .copyright.animation-before-after-show-window {
-	color: #333;
-}
 
 
 .circle-btn {
@@ -117,19 +114,48 @@ $delay-left-slide-window: 0.5s;
 .open-active-window .wrap-left-slide-window.active-window {
 	left: 57% !important;
 }
+
+//Прячем элемент как только начинается процесс открытия окна
 .open-active-window .hide-before-show-window {
 	@include animation-transition ($delay-left-slide-window, all, ease-out, 0s);
 	@include cros-opacity(0);
 }
+//Оставляем такое же состаяние как и при открытом окне
+.close-active-window .hide-before-show-window {
+	@include cros-opacity(0);
+}
+//Анимация когда мы закрываем окно(ждем когда окно закроется после этого начинаем анимацию)
+.hide-before-show-window {
+	@include animation-transition ($delay-left-slide-window, all, ease-out, 0s);
+}
+//После конца анимации полностью убираем элемент
 .open-active-window.end-open-active-window .hide-before-show-window {
 	display: none;
 }
-.open-active-window .animation-before-after-show-window {
-	@include animation-transition ($delay-left-slide-window, all, ease-out, 0s);
+
+.animation-before-after-show-window {
+	@include animation-transition ($delay-left-slide-window, opacity, ease-out, 0s);
+}
+.open-active-window .animation-before-after-show-window, .close-active-window .animation-before-after-show-window {
 	@include cros-opacity(0);
 }
 .open-active-window.end-open-active-window .animation-before-after-show-window {
 	@include cros-opacity(1);
+}
+
+//Состояние футера после анимации
+.open-active-window.end-open-active-window footer .copyright.animation-before-after-show-window {
+	color: #333;
+}
+//Состояние навигации послее анимации
+.open-active-window.end-open-active-window .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window,
+.close-active-window .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window {
+	left: 57%;
+	margin-left: -30px;
+}
+.close-active-window .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window .jcarousel-pagination a,
+.open-active-window.end-open-active-window .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window .jcarousel-pagination a {
+	border-color: #C20080;
 }
 
 .wrap-left-slide-window .left-slide-window {
@@ -138,18 +164,39 @@ $delay-left-slide-window: 0.5s;
     left: -57%;
 	width: 57%;
 	height: 100%;    
-	background: #fff;
+	background: url(../img/left-slide-window-left-line.png) left top repeat-y #fff;
 }
-.wrap-left-slide-window .left-slide-window .close-window {
-	position: absolute;
+.wrap-left-slide-window .left-slide-window .header {
+	padding-top: 81px;
+	margin-bottom: 53px;
+}
+.wrap-left-slide-window .left-slide-window .header .logo {
+	display: inline-block;
+	width: 110px;
+    height: 44px;
+	background: url(../svg/logo-2.svg) top left no-repeat;
+	background-size: 100% auto;
+}
+.wrap-left-slide-window .left-slide-window .header .phone {
+    color: #009ECC;
+    padding-top: 12px;
+    font-weight: 700;
+}
+.wrap-left-slide-window .left-slide-window .header .close-window {
+	position: relative;
 	display: block;
 	color: #C20080;
 	font-weight: 700;
-	right: -20px;
-	top: 81px;
+	right: -35px;
 	text-transform: uppercase;
+	text-align: right;
 	text-decoration: none;
 	padding: 8px 61px 0 0;
+	@include animation-transition (1s, all, ease-out, 0s);
+	@include cros-opacity(0);
+}
+.wrap-left-slide-window.active-window .header .close-window {
+	@include cros-opacity(1);
 }
 .wrap-left-slide-window .left-slide-window .close-window:before {
 	content: '';
@@ -163,4 +210,46 @@ $delay-left-slide-window: 0.5s;
 	color: #fff;
 	@include border-radius (50%);
 	background: url(../svg/close.svg) center center no-repeat #C20080;
+}
+.wrap-main-slide-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+	overflow: hidden;
+}
+.wrap-main-slide-window .main-slide-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.wrap-main-slide-window .main-slide-window .docs .item {
+	display: block;
+	position: relative;
+	padding: 0 0 0 50px;
+	color: #C20080;
+	margin: 0 0 60px;
+}
+.wrap-main-slide-window .main-slide-window .docs .item span {
+	color: #000;
+}
+.wrap-main-slide-window .main-slide-window .docs .item img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.main-menu {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #9E0070;
+	padding: 40px 0 0;	
+}
+.main-menu a {
+	color: #fff;
 }
