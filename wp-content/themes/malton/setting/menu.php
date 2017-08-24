@@ -1,6 +1,8 @@
 <?php
 //Регестрируем область под меню
 register_nav_menu('main-menu', 'Основное меню');
+//Регестрируем область под меню
+register_nav_menu('about-menu', 'Меню о проекте');
 
 /*Пример вывода меню
 wp_nav_menu( array( 'theme_location' => 'main-menu' ) );

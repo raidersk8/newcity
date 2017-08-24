@@ -75,6 +75,7 @@ function theme_name_scripts() {
 	wp_enqueue_script( 'malton-plagins', get_template_directory_uri() . '/js/malton-plagins.js' );
 	
 	//Инициализация всего
+	wp_enqueue_script( 'svg', get_template_directory_uri() . '/js/svg.min.js' );
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js' );
 	wp_enqueue_script( 'map', get_template_directory_uri() . '/js/map.js' );
 	

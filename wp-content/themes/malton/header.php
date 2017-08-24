@@ -16,39 +16,45 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="">
-  <header class="light-content">
-	<div class="top-part text-center">
-		Скидка 10% на 2-х комнатные квартиры при оформлении ипотеки до конца месяца! <a href="#">Подробнее</a>
-	</div>
-  </header>
-	<div class="main-control-panel">
+  <body>
+	<div id="preloader"></div>
+	<header class="light-content">
+		<div class="top-part text-center">
+			Скидка 10% на 2-х комнатные квартиры при оформлении ипотеки до конца месяца! <a href="#">Подробнее</a>
+		</div>
+	</header>
+	<div class="wrap-main-logo">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-6">
+				<div class="col-xs-12">
 					<div class="global-left-padding">
 						<a href="/" class="logo hide-before-show-window"></a>
-					</div>
-				</div>
-				<div class="col-xs-6 text-center right-part">
-					<div class="row">
-						<div class="col-xs-2 col-xs-offset-8">
-							<a class="circle-btn" href="#">
-								<span class="circle"><img src="<?php echo get_bloginfo('template_url'); ?>/svg/map-marker.svg" alt="" /></span><br />
-								Калуга
-							</a>
-						</div>
-						<div class="col-xs-2">
-							<a class="circle-btn" href="#">
-								<span class="circle"><div class="menu-icon"><div class="icon"><div class="middle-line"></div></div></div></span><br />
-								Меню
-							</a>
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="main-menu">
-		<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container_class' => 'menu', 'menu_class' => '' ) ); ?>
+	<div class="main-control-panel">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-4 text-center col-xs-offset-4">
+					<a class="circle-btn no-preloader" href="#">
+						<span class="circle"><img src="<?php echo get_bloginfo('template_url'); ?>/svg/map-marker.svg" alt="" /></span><br />
+						Калуга
+					</a>
+				</div>
+				<div class="col-xs-4 text-center">
+					<a class="circle-btn no-preloader" id="show-main-menu" href="#">
+						<span class="circle"><div class="menu-icon"><div class="icon"><div class="middle-line"></div></div></div></span><br />
+						Меню
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main-menu" style="display: none;">
+		<div class="inner">
+			<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container_class' => 'menu', 'menu_class' => '' ) ); ?>
+		</div>
+		<a href="#" class="close-menu no-preloader">Закрыть</a>
 	</div>

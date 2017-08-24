@@ -2,11 +2,12 @@
 	//width: 1164px !important;
 }
 html, body {
-  position: relative;
-  margin:0;
-  padding:0;
-  width:100%;
-  height:100%;
+	position: relative;
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	overflow: hidden;
 }
 body {
 	font-family: 'Open Sans', sans-serif;
@@ -14,7 +15,7 @@ body {
 	line-height: 24px;
 	font-weight: 400;
 	color: $main-color;
-	background: url(../img/template-main.png) center 0 no-repeat #fff;
+	//background: url(../img/template-main.png) center 0 no-repeat #fff;
 	//height: 6000px;
 }
 a {

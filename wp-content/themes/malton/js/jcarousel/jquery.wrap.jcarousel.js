@@ -28,8 +28,14 @@ var methods = {
 			vertical: false,
 			//На всю ширину элемента
 			isfullheight: false,
+			connectorCarousel: false,
 			scrollendFunc: function() {},
 		}, options);
+		
+		//Функция для связи двух слайдеров
+		var connector = function(itemNavigation, carouselStage) {
+			return carouselStage.jcarousel('items').eq(itemNavigation.index());
+		};
 		
 		//Конце инициализации
 		var jcarouselCreateend = function(event, carousel) {
@@ -41,6 +47,8 @@ var methods = {
 			initScrollPagination(wrapJcarousel, jcarousel, carousel);
 			//Ининициализируем пагинацию
 			initPagination(wrapJcarousel, jcarousel, carousel);
+			//Ининициализируем связь между слайдерами
+			initConnected(wrapJcarousel, jcarousel, carousel);
 			//Ининициализируе пагинации листалка пальцами
 			initSwipe(wrapJcarousel, jcarousel, carousel);
 		}
@@ -160,6 +168,31 @@ var methods = {
 					jcarousel.jcarousel('scroll', '+=1');
 				}
 			});
+		}
+		
+		//Инициализируем связь между сладерами
+		function initConnected(wrapJcarousel, jcarousel, carousel) {		
+			if(settings.connectorCarousel != false) {
+				settings.connectorCarousel.find('.jcarousel').jcarousel('items').each(function() {
+					var item = $(this);
+
+					// This is where we actually connect to items.
+					var target = connector(item, jcarousel);
+
+					item
+						.on('jcarouselcontrol:active', function() {
+							settings.connectorCarousel.find('.jcarousel').jcarousel('scrollIntoView', this);
+							item.addClass('active');
+						})
+						.on('jcarouselcontrol:inactive', function() {
+							item.removeClass('active');
+						})
+						.jcarouselControl({
+							target: target,
+							carousel: jcarousel
+						});
+				});
+			}
 		}
 		
 		//Инициализируем постраничную пагинацию

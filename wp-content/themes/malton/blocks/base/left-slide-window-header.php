@@ -5,5 +5,5 @@
 	(4842) 222-888
 </div>
 <div class="col-xs-4">
-	<a href="#" class="close-window">Закрыть</a>
+	<a href="#" class="close-window no-preloader">Закрыть</a>
 </div>

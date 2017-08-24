@@ -17,11 +17,12 @@ $(".fancybox").fancybox({
 });
 //Для инициализации плагинов которым важно дождаться загрузки картинок
 $(window).load(
-	function() {	
-		$('#preloader').hide();
+	function() {			
+		$('#preloader').fadeOut(500);
 		$('#sliderScrollbar').sliderScrollbar();
 		fullWindowHeight();
-		$('.front-page .wrap-jcarousel').wrapJcarousel();		
+		var jcarouselBg = $('.front-page .jcarousel-bg').wrapJcarousel();		
+		$('.front-page .jcarousel-front-text').wrapJcarousel({connectorCarousel: jcarouselBg});		
 	}
 );
 $( window ).resize(function() {
@@ -71,6 +72,10 @@ function runMultipleFancyboxClose()
 }
 /*-------------------------------------------------------------------------------------------------------*/
 
+//Если мы видим что окно должно быть открыто с самого начало то добавляем класы для открытого окна
+if($('.wrap-left-slide-window.active-window.fixed-open').length) {
+	$('body').addClass('open-active-window').addClass('end-open-active-window');
+}
 
 //Кнопки для показа выдвигающихся окон
 $('body').on('click', '.switch-slide-window', function() {
@@ -101,4 +106,48 @@ $('body').on('click', '.wrap-left-slide-window .left-slide-window .close-window'
 	  $('.active-window').removeClass('active-window');
 	}
 	setTimeout(func, 1500);
+});
+
+
+//Добавляе span для стрелки в пункт меню у которых есть подменю
+$('.main-menu ul li.menu-item-has-children > a').append('<span></span>');
+//Показываем прелоудер по клику по ссылке
+$('body').on('click', 'a:not(.no-preloader)', function() {
+	if($(this).parents('.menu-item-has-children').length) {
+	}
+	$('#preloader').fadeIn(500);
+});
+//Раскрываем подменю по клику
+$('body').on('click', '.main-menu ul li.menu-item-has-children > a span', function() {
+	var parent = $(this).parents('.menu-item-has-children');
+	parent.find('.sub-menu').slideToggle("fast");
+	//Помечаем классом элемент
+	if(parent.hasClass('active')) parent.removeClass('active'); else parent.addClass('active');
+	$('#preloader').hide();
+	return false;
+});
+
+$('.main-menu .close-menu').on('click', function() {
+	$('.main-menu').hide( 'slide', { direction: "right" }, 300);
+});
+$('#show-main-menu').on('click', function() {
+	$('.main-menu').show( 'slide', { direction: "right" }, 300);
+});
+
+//Обрабатываем svg
+var object = document.getElementById("object-homes"); //получаем элмент object
+$(window).load(function() {
+//object.addEventListener("load",function(){	
+	if($(object).length ) {
+		var svgDocument = object.contentDocument; //получаем svg элемент внутри object
+		//При навереднии убираем фильтр прозрачности и видим секцию
+		$(svgDocument).find('#Cloud-Select').on('mouseenter', function() {
+			var $this = $(this);
+			$this.attr('filter', '');
+		});
+		//При выходи из области ставим фильтр прозрачности и секция исчезает
+		$(svgDocument).find('#Cloud-Select').on('mouseleave', function() {
+			$(this).attr('filter', 'url(#floodFilter)');
+		});
+	}
 });

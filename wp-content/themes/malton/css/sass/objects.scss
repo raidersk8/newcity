@@ -1,0 +1,24 @@
+.objects-page .home {
+	//@include cros-opacity(0);
+	//@include animation-transition (0.3s, all, ease-out, 0s);
+}
+.objects-page .home:hover {
+	//@include cros-opacity(1);
+}
+.objects-page {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../img/objects-bg.png) top left no-repeat;
+	background-size: cover;
+	z-index: 100;
+}
+.objects-page .home {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

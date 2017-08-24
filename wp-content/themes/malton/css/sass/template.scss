@@ -1,3 +1,16 @@
+.main-bg-page {	
+	background: url(../img/about-page-bg.jpg) top left no-repeat;
+	background-size: cover;
+}
+#preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #C20080;
+	z-index: 9999;
+}
 .global-left-padding {
 	padding-left: 46px;
 }
@@ -9,23 +22,27 @@
 }
 .main-control-panel {
 	position: absolute;
-    top: 66px;
-    left: 0;
-    width: 100%;
+    top: 81px;
+    right: 0;
+    width: 25%;
 	z-index: 100;
 }
-.main-control-panel .logo {
+.wrap-main-logo {
+	position: absolute;
+    top: 66px;
+    left: 0;
+    width: 25%;
+	z-index: 100;
+}
+.wrap-main-logo .logo {
 	display: inline-block;
 	width: 185px;
 	height: 74px;
 	background: url(../svg/logo.svg) top left no-repeat;
 }
-.main-control-panel .right-part {
-	    padding-top: 15px;
-}
 header {
 	position: relative;
-	z-index: 100;
+	z-index: 110;
 }
 header .top-part {
 	position: relative;
@@ -111,7 +128,7 @@ $delay-left-slide-window: 0.5s;
 .wrap-left-slide-window {
 	@include animation-transition ($speed-left-slide-window, all, ease-out, $delay-left-slide-window);
 }
-.open-active-window .wrap-left-slide-window.active-window {
+.open-active-window .wrap-left-slide-window.active-window, .wrap-left-slide-window.active-window.fixed-open {
 	left: 57% !important;
 }
 
@@ -157,6 +174,14 @@ $delay-left-slide-window: 0.5s;
 .open-active-window.end-open-active-window .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window .jcarousel-pagination a {
 	border-color: #C20080;
 }
+.close-active-window .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window .jcarousel-prev,
+.open-active-window.end-open-active-window .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window .jcarousel-prev {
+	border-color: #C20080;
+}
+.close-active-window .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window .jcarousel-next,
+.open-active-window.end-open-active-window .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window .jcarousel-next {
+	border-color: #C20080;
+}
 
 .wrap-left-slide-window .left-slide-window {
 	position: absolute;
@@ -165,6 +190,7 @@ $delay-left-slide-window: 0.5s;
 	width: 57%;
 	height: 100%;    
 	background: url(../img/left-slide-window-left-line.png) left top repeat-y #fff;
+	z-index: 20;
 }
 .wrap-left-slide-window .left-slide-window .header {
 	padding-top: 81px;
@@ -247,9 +273,144 @@ $delay-left-slide-window: 0.5s;
 	position: absolute;
 	right: 0;
 	top: 0;
-	background: #9E0070;
-	padding: 40px 0 0;	
+	width: 314px;
+	z-index: 100;
+	height: 100%;
+}
+.main-menu .inner {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: rgba(158, 0, 112, 0.95);
+	width: 294px;
+	padding: 129px 50px 0 40px;
+	height: 100%;
+}
+
+.main-menu .close-menu {
+	display: block;
+    position: absolute;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+	color: $a-color-yellow;
+    text-decoration: none;
+    padding: 7px 0 0 60px;
+    top: 81px;
+    left: 0px;
+    letter-spacing: 1.2px;
+}
+.main-menu .close-menu:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+	@include border-radius (50%);
+    background: url(../svg/close-2.svg) center center no-repeat $a-color-yellow;
+}
+.main-menu ul {
+	display: block;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.main-menu ul li {
+	display: block;
+	margin: 0 0 15px;
+}
+.main-menu ul li a {
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+}
+.main-menu ul li.menu-item-has-children > a {
+	padding-right: 18px;
+}
+.main-menu ul li.menu-item-has-children.active > a {
+	font-weight: 700;
+	color: $a-color-yellow;	
+    letter-spacing: 0.8px;
+}
+.main-menu ul li.menu-item-has-children > a span {	
+	display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 100%;
+}
+.main-menu ul li.menu-item-has-children > a span:before {
+	content: '';
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 4px;
+	@include bottom-arrow (1px, 9px, 9px, #fff);
+}
+.main-menu ul li.menu-item-has-children.active > a span:before {
+	top: 10px;
+	@include top-arrow (1px, 9px, 9px, $a-color-yellow);
+}
+.main-menu ul li ul {
+	display: none;
+	text-transform: none;
+	padding: 13px 0 7px 27px;
+	letter-spacing: 0px;
+	font-weight: 400;
+}
+.main-menu ul li ul li {
+	margin: 0 0 11px;
 }
 .main-menu a {
 	color: #fff;
+}
+
+.main-dark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;	
+	z-index: 10;
+	background: #2F281D;
+	@include cros-opacity(0.85);
+}
+.main-content {
+	position: relative;
+	z-index: 10;
+}
+.main-shadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../img/shadow-left.png) top left no-repeat;
+	background-size: auto 100%;
+	z-index: 10;
+}
+.main-shadow:before {
+	content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/shadow-right.png) top right no-repeat;
+    background-size: auto 100%;
+}
+.main-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }

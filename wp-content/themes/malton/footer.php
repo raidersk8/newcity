@@ -12,7 +12,6 @@
 			</div>
 		</div>
 	</footer>
-	<div class="preloader"></div>
 	<?php wp_footer(); ?>	
 	</body>
 </html>
