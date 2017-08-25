@@ -22,6 +22,10 @@ function runMultiple(jcarousel)
 var methods = {
 	init : function( options ) { 
 		var settings = $.extend( {
+			animation: {
+				duration: 900,
+				easing:   'linear'
+			},
 			responsivecountitem: 0,
 			autoscroll: 0,
 			wrap: null,
@@ -96,6 +100,7 @@ var methods = {
 			jcarousel.jcarousel({
                 vertical: settings.vertical,
                 wrap: settings.wrap,
+                animation: settings.animation,
             });
 			
 			if(settings.autoscroll > 0) {
@@ -111,7 +116,19 @@ var methods = {
 			jcarousel.jcarousel('items').removeClass('active');
 			jcarousel.jcarousel('first').addClass('active');
 			
-			jcarousel.on('jcarousel:visiblein', function(event, carousel) {
+			jcarousel.on('jcarousel:targetin', function(event, carousel) {
+				//Узнаем с какой стороны становится активный элемент
+				//alert(jcarousel.jcarousel('items').index($(event.target)));
+				
+				var actIndex = jcarousel.jcarousel('items').index($(event.target));
+				
+				jcarousel.jcarousel('items').removeClass('former-active');
+				
+				for(var i=0; i<actIndex; i++) {
+					jcarousel.jcarousel('items').eq(i).addClass('former-active');
+				}
+				
+				
 				jcarousel.jcarousel('items').removeClass('active');
 				$(event.target).addClass('active');
 		   });

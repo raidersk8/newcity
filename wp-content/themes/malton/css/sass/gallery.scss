@@ -5,3 +5,233 @@
 	width: 100%;
 	height: 100%;
 }
+.gallery-page .item {
+	display: block;
+	position: relative;
+	height: 360px;
+	width: 506px;
+	color: #fff;
+	font-size: 26px;
+	line-height: 48px;
+	font-weight: 700;
+	text-decoration: none;
+}
+.gallery-page .item.left-part {
+	margin: 0 0 0 auto;
+}
+.gallery-page .item:hover {
+	color: $a-color-yellow;
+}
+.gallery-page .item .img {
+	position: relative;
+	height: 280px;
+	width: 506px;
+	top: 0;
+	left: 0;
+	border: 2px solid transparent;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	@include animation-transition (0.3s, all, ease-out, 0s);
+}
+.gallery-page .item .text {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	@include animation-transition (0.3s, all, ease-out, 0s);
+}
+.gallery-page .item:hover .text {
+	@include transform (scale(1.1));
+}
+.gallery-page .item:hover .img {
+	top: -15px;
+	left: -15px;
+	height: 310px;
+	width: 536px;
+	border: 2px solid $a-color-yellow;
+}
+
+.full-page-gallery .wrap-jcarousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.full-page-gallery .wrap-jcarousel .jcarousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.full-page-gallery .wrap-jcarousel .jcarousel li {
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	
+	@include cros-opacity(0);
+	@include animation-transition (2s, all, ease-out, 0s);
+}
+.full-page-gallery .wrap-jcarousel .jcarousel li.active {
+    z-index: 2;
+	@include cros-opacity(1);
+}
+
+.full-page-gallery .wrap-jcarousel .jcarousel li .text {
+	display: block;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 110px;
+	color: #fff;
+}
+
+.full-page-gallery .wrap-jcarousel .jcarouse-control-panel {
+	display: block;
+    position: absolute;
+    width: 164px;
+    left: 50%;
+	margin-left: -82px;
+    bottom: 30px;
+	z-index: 100;
+	text-align: center;
+}
+.full-page-gallery .wrap-jcarousel .jcarouse-control-panel .jcarousel-prev {
+	position: absolute;
+	left: 0;
+	top: 0;
+	@include left-arrow (2px, 17px, 17px, #fff);	
+}
+.full-page-gallery .wrap-jcarousel .jcarouse-control-panel .jcarousel-prev:hover {
+	border-color: $a-color-yellow;
+}
+.full-page-gallery .wrap-jcarousel .jcarouse-control-panel .jcarousel-next {
+	position: absolute;
+	right: 0;
+	top: 0;
+	@include right-arrow (2px, 17px, 17px, #fff);	
+}
+.full-page-gallery .wrap-jcarousel .jcarouse-control-panel .jcarousel-next:hover {
+	border-color: $a-color-yellow;
+}
+.full-page-gallery .wrap-jcarousel .jcarouse-control-panel .prev-page {
+	position: relative;
+    top: -5px;
+	@include cross-icon (2px, 28px, 28px, #fff, $a-color-yellow);
+}
+.list-galleries .wrap-jcarousel {
+	position: relative;
+    z-index: 10;
+    padding-top: 220px;
+}
+.list-galleries li.empty {
+	width: 410px;
+}
+.list-galleries li {
+	padding: 0 15px;
+}
+.list-galleries li.active {
+}
+.list-galleries li .item {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	text-decoration: none;
+	padding: 11px 0 100px;
+	color: #fff;
+}
+.list-galleries li.active .item {
+	width: 100%;
+}
+.list-galleries li .item .img {
+	position: relative;
+	border: 2px solid transparent;
+	margin-bottom: 15px;
+}
+.list-galleries li .item .img .more {
+	display: none;
+	text-align: center;
+	font-weight: 500;
+	color: #fff;
+	position: absolute;
+	font-size: 14px;
+	line-height: 16px;
+	text-transform: uppercase;
+	background: $a-color-yellow;
+	text-decoration: none;
+	top: 50%;
+	left: 50%;
+	width: 156px;
+	margin: -30px 0 0 -79px;
+	padding: 14px 0px;
+}
+.list-galleries li.active .item .img .more {	
+	display: block;
+	@include animation-transition (0.3s, opacity, linear, 0s);
+	@include cros-opacity(0);
+}
+.list-galleries li.active .item .img:hover .more {
+	@include cros-opacity(1);
+}
+.list-galleries li .item .img:hover {
+	border-color: $a-color-yellow;
+}
+.list-galleries li .item img {
+	display: block;
+	width: 260px;	
+	//@include transform (scale(0.7));
+	@include animation-transition (0.85s, width, linear, 0s);
+}
+.list-galleries li.active .item img, .list-galleries li.former-active .item img {
+	width: 410px;	
+}
+.list-galleries li .item .title {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 36px;
+	font-weight: 800;
+	@include transform (scale(1));
+	@include transform-origin(100% 0);
+	@include animation-transition (0.85s, transform, linear, 0s);
+}
+.list-galleries li.active .item .title {
+	@include transform (scale(1.2));
+}
+.list-galleries li .item .text {
+	font-size: 11px;
+	position: absolute;
+	width: 260px;	
+	@include cros-opacity(0);
+	@include transform (scale(1));
+	@include transform-origin(0 0);
+	@include animation-transition (0.85s, all, linear, 0s);
+}
+.list-galleries li.active .item .text {
+	@include cros-opacity(1);
+	@include transform (scale(1.4));
+}
+
+
+.list-galleries .wrap-jcarousel .jcarousel-prev {
+	position: absolute;
+	left: -30px;
+	top: 400px;
+	@include left-arrow (2px, 17px, 17px, #fff);	
+}
+.list-galleries .wrap-jcarousel .jcarousel-next {
+	position: absolute;
+	right: -30px;
+	top: 400px;
+	@include right-arrow (2px, 17px, 17px, #fff);	
+}
+
+
+.list-galleries .year-selector {
+    position: absolute;
+    right: 25%;
+    top: 87px;
+    z-index: 200;
+}

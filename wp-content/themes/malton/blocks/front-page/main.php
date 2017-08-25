@@ -12,8 +12,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="main-shadow"></div>
-		
+		<div class="main-shadow"></div>		
 	</div>
 	<div class="wrap-main-slide-window">
 		<div class="wrap-left-slide-window main-slide-window" id="slide-window-doc">
@@ -78,7 +77,7 @@
 											<div class="global-left-padding">
 												<h2 class="h1 animated animate-title">Доступные цены на квартиры!</h2>
 												<h3 class="animated animate-sub-title">от 1,6 млн. рублей</h3>
-												<a href="#" class="btn btn-eggplant text-uppercase animated animate-btn ">Подобрать квартиру</a> <span class="hide-before-show-window"><a href="#slide-1" class="more animated switch-slide-window"><span>Подробнее</span></a></span>
+												<a href="#" class="btn btn-eggplant text-uppercase animated animate-btn no-preloader">Подобрать квартиру</a> <span class="hide-before-show-window"><a href="#slide-1" class="more animated switch-slide-window no-preloader"><span>Подробнее</span></a></span>
 											</div>
 										</div>
 									</div>
@@ -143,9 +142,9 @@
 		
 		<div class="jcarousel-nav animation-before-after-show-window">
 			<div class="vertical-middle">
-				<a href="#" class="jcarousel-prev"></a>
+				<a href="#" class="jcarousel-prev no-preloader"></a>
 				<div class="jcarousel-pagination" data-shownum="false"></div>
-				<a href="#" class="jcarousel-next"></a>
+				<a href="#" class="jcarousel-next no-preloader"></a>
 			</div>
 		</div>
 	</div>

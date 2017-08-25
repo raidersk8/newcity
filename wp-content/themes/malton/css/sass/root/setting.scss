@@ -28,10 +28,7 @@ $media-xs-max-width: 768px;
 @mixin right-arrow ($border_width, $pxwidth, $pxheight, $color) {
 	width: $pxwidth;
     height: $pxheight;
-	-moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+	@include transform(rotate(45deg)); 
 	border-bottom: none;
     border-top: $border_width solid $color;
     border-right: $border_width solid $color;
@@ -40,10 +37,7 @@ $media-xs-max-width: 768px;
 @mixin left-arrow ($border_width, $pxwidth, $pxheight, $color) {
 	width: $pxwidth;
     height: $pxheight;
-	-moz-transform:    rotate(-45deg);
-	-o-transform:      rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	transform:         rotate(-45deg);
+	@include transform(rotate(-45deg)); 
 	border-bottom: none;
 	border-top: $border_width solid $color;
 	border-left: $border_width solid $color;
@@ -53,10 +47,7 @@ $media-xs-max-width: 768px;
 @mixin top-arrow ($border_width, $pxwidth, $pxheight, $color) {
 	width: $pxwidth;
     height: $pxheight;
-	-moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+	@include transform(rotate(45deg)); 
 	border-bottom: none;
 	border-top: $border_width solid $color;
 	border-left: $border_width solid $color;
@@ -66,10 +57,7 @@ $media-xs-max-width: 768px;
 @mixin bottom-arrow ($border_width, $pxwidth, $pxheight, $color) {
 	width: $pxwidth;
     height: $pxheight;
-	-moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+	@include transform(rotate(-45deg)); 
 	border-top: none;
 	border-bottom: $border_width solid $color;
 	border-left: $border_width solid $color;
@@ -89,6 +77,14 @@ $media-xs-max-width: 768px;
     -o-transform: $val;
     transform: $val;
 }
+//Позиция относительно трансформации
+@mixin transform-origin ($val) {
+	-webkit-transform-origin: $val;
+    -moz-transform-origin: $val;
+    -o-transform-origin: $val;
+    -ms-transform-origin: $val;
+    transform-origin: $val;
+}
 @mixin cros-opacity ($val) {
 	-moz-opacity: $val; /* Mozilla 1.6 и ниже */
 	-khtml-opacity: $val; /* Konqueror 3.1, Safari 1.1 */
@@ -99,6 +95,46 @@ $media-xs-max-width: 768px;
 	-webkit-border-radius: $val; /* Safari, Chrome */
 	-khtml-border-radius: $val; /* KHTML */
 	border-radius: $val; /* CSS3 */
+}
+@mixin cross-icon ($border_width, $pxwidth, $pxheight, $color, $hover-color) {
+	.icon {
+		position: relative;
+		display: inline-block;
+		width:  $pxwidth;
+		height:  $pxheight;
+	}
+	.icon:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: $border_width;
+		height: $pxheight;
+		border-left: $border_width solid $color;
+		margin-left: -($border_width)/2;
+		@include transform(rotate(45deg)); 
+		@include transform-origin(50% 50%);
+	}
+	.icon:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: $border_width;
+		height: $pxheight;
+		border-left: $border_width solid $color;
+		margin-left: -($border_width)/2;
+		@include transform(rotate(-45deg)); 
+		@include transform-origin(50% 50%);
+	}
+	.icon:hover:before {
+		border-color: $hover-color;
+	}
+	.icon:hover:after {
+		border-color: $hover-color;
+	}
 }
 @mixin menu-icon ($color) {
 	.icon {
@@ -140,17 +176,11 @@ $media-xs-max-width: 768px;
 }
 @mixin close-menu-icon () {	
 	.icon:before {
-		-moz-transform: rotate(-45deg);
-		-o-transform: rotate(-45deg);
-		-webkit-transform: rotate(-45deg);
-		transform: rotate(-45deg);
+		@include transform(rotate(-45deg)); 
 		top: 6px;
 	}
 	.icon:after {
-		-moz-transform: rotate(45deg);
-		-o-transform: rotate(45deg);
-		-webkit-transform: rotate(45deg);
-		transform: rotate(45deg);
+		@include transform(rotate(45deg)); 
 		bottom: 6px;
 	}
 	.icon .middle-line {
@@ -159,17 +189,11 @@ $media-xs-max-width: 768px;
 }
 @mixin open-menu-icon () {	
 	.icon:before {
-		-moz-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
+		@include transform(rotate(0deg)); 
 		top: 0px;
 	}
 	.icon:after {
-		-moz-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
+		@include transform(rotate(0deg)); 
 		bottom: 0px;
 	}
 	.icon .middle-line {

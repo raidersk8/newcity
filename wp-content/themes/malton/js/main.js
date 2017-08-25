@@ -1,3 +1,8 @@
+$('.selectpicker').selectpicker({
+  style: 'btn-info',
+  size: 4
+});
+
 $('.scroll-to').scrollToAnim();
 $('.front-page .our-projects .items .item').on('mouseenter', function() {
 	$('.front-page .our-projects .hover-block .item').removeClass('active');
@@ -22,7 +27,9 @@ $(window).load(
 		$('#sliderScrollbar').sliderScrollbar();
 		fullWindowHeight();
 		var jcarouselBg = $('.front-page .jcarousel-bg').wrapJcarousel();		
-		$('.front-page .jcarousel-front-text').wrapJcarousel({connectorCarousel: jcarouselBg});		
+		$('.front-page .jcarousel-front-text').wrapJcarousel({connectorCarousel: jcarouselBg});	
+		$('.full-page-gallery .wrap-jcarousel').wrapJcarousel();		
+		$('.list-galleries .wrap-jcarousel').wrapJcarousel();		
 	}
 );
 $( window ).resize(function() {
