@@ -1,0 +1,97 @@
+.blog {
+	padding: 181px 0 0;
+	//background: url(../img/template-blog.png) top left no-repeat;
+	z-index: 110;
+	background: #fff;
+}
+.blog .header {
+	position: absolute;
+	top: 81px;
+	left: 0;
+	width: 75%;
+}
+.blog .header .logo {
+    display: inline-block;
+    width: 110px;
+    height: 44px;
+    background: url(../svg/logo-2.svg) top left no-repeat;
+    background-size: 100% auto;
+}
+.blog .header .phone {
+    color: #009ECC;
+    padding-top: 12px;
+    font-weight: 700;
+}
+.blog .header .email {
+    color: #009ECC;
+    padding-top: 12px;
+    font-weight: 700;
+}
+.blog .header .email a {
+    color: #009ECC;
+}
+.blog .items .item .date {
+	color: #009ECC;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+.blog .wrap-jcarousel .jcarousel ul li a {
+	display: block;
+	width: 100%;
+}
+.blog .wrap-jcarousel .jcarousel ul li img {
+	width: 100%;
+}
+
+.blog .wrap-jcarousel .jcarousel-nav {
+	padding: 10px 0 0;
+	text-align: center;
+}
+.blog .wrap-jcarousel .jcarousel-prev {
+	display: inline-block;
+	@include left-arrow (1px, 10px, 10px, #C20080)
+}
+.blog .wrap-jcarousel .jcarousel-prev:hover {
+	border-color: #F0C900;
+}
+.blog .wrap-jcarousel .jcarousel-next {
+	display: inline-block;
+	@include right-arrow (1px, 10px, 10px, #C20080)
+}
+.blog .wrap-jcarousel .jcarousel-next:hover {
+	border-color: #F0C900;
+}
+.blog .wrap-jcarousel .jcarousel-pagination {
+	display: inline-block;
+}
+.blog .wrap-jcarousel .jcarousel-pagination a {
+	display: inline-block;
+	border: 1px solid #C20080;
+	background: rgba(255, 255, 255, 0.25);
+	@include border-radius(50%);
+	width: 12px;
+    height: 12px;
+	margin: 0 5px;
+	@include animation-transition (0.7s, all, ease-out, 0s);
+}
+.blog .wrap-jcarousel .jcarousel-pagination a:hover {
+	border-color: #F0C900;
+}
+.blog .wrap-jcarousel .jcarousel-pagination a.active {
+	border-color: #F0C900;
+}
+.blog .wrap-jcarousel .jcarousel-pagination a:before {
+	content: '';
+	display: block;
+	width: 10px;
+    height: 10px;
+	@include border-radius(50%);
+	border: 1px solid transparent;
+	background: transparent;
+	@include animation-transition (0.7s, all, ease-out, 0s);
+}
+.blog .wrap-jcarousel .jcarousel-pagination a.active:before {
+	border: 1px solid #C20080;
+	background: #F0C900;	
+}

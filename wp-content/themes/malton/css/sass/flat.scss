@@ -1,0 +1,59 @@
+.flat-page {
+	background: url(../svg/choose-object.svg) left top no-repeat;
+	background-size: cover;
+}
+.flat-page .left-slide-window .top-part {
+	margin-bottom: 30px;
+}
+.flat-page .left-slide-window .inner {
+	position: relative;
+}
+.flat-page .left-slide-window .inner .back-nav {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -46px;
+	width: 32px;
+	height: 32px;
+	background: url(../svg/arrow-left.svg) center center no-repeat;
+	border: 1px solid #C20080;
+	@include border-radius (50%);
+}
+.flat-page .left-slide-window .top-part .description .title {
+	color: #C20080;
+}
+.flat-page .left-slide-window .top-part .description .price {
+	color: #009ECC;
+    font-size: 22px;
+    padding: 10px 0;
+    font-weight: 600;
+}
+.flat-page .left-slide-window .bottom-part .action-block {
+	margin-bottom: 30px;
+}
+.flat-page .left-slide-window .bottom-part .action-block .title {
+	position: relative;
+    font-size: 22px;
+    font-weight: 600;	
+	margin-bottom: 20px;
+}
+.flat-page .left-slide-window .bottom-part .action-block .title.sale:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background: url(../svg/sale-icon.svg) 0px 0px no-repeat;
+	top: 4px;
+	left: -33px;
+}
+.flat-page .left-slide-window .bottom-part .action-block .title.action:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background: url(../svg/action-icon.svg) 0px 0px no-repeat;
+	top: 4px;
+	left: -33px;
+}

@@ -64,6 +64,7 @@ var methods = {
 			wrapJcarousel = jcarousel.parents('.wrap-jcarousel'),
 			wrapWidth = jcarousel.innerWidth(),
 			wrapHeight = jcarousel.innerHeight();
+			jcarousel.jcarousel('items').removeClass('before-activation');
 			//Пронумеруем каждый элемент(для скролинга)
 			var jitems = carousel.items();
 			for(var i=0; i<jitems.length; i++) {

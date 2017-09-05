@@ -1,0 +1,22 @@
+<svg width="30" height="40" viewBox="0 0 30 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>DOC-Icon</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-79 -3865)">
+<g id="DOC-Icon">
+<g id="Rectangle 6">
+<use xlink:href="#path0_fill" transform="translate(79 3865)" fill="#009ECC"/>
+</g>
+<g id="Vector 6">
+<use xlink:href="#path1_fill" transform="translate(99 3865)" fill="#007DA2"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_fill" transform="translate(84 3880)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 40L 30 40L 30 10L 20 0L 0 0L 0 40Z"/>
+<path id="path1_fill" d="M 0 10L 0 0L 10 10L 0 10Z"/>
+<path id="path2_fill" d="M 0 0L 0 20L 20 20L 20 0L 0 0ZM 1.73097 18.269L 1.73097 1.73097L 18.269 1.73097L 18.269 4.81752L 15.8916 4.81752L 13.5558 10.6986C 12.9301 12.3253 12.5756 13.2221 12.5339 13.3681C 12.659 12.5547 12.7424 11.7414 12.7424 10.9281L 12.7424 4.81752L 10.1356 4.81752L 7.57039 10.7612L 6.84046 12.5547L 6.52763 13.3472C 6.63191 12.7842 6.69447 11.8248 6.71533 10.4692L 6.79875 4.83837L 3.96246 4.83837L 4.33785 16.1001L 7.67466 16.1001L 9.61418 11.512C 10.0521 10.4067 10.3441 9.50991 10.5318 8.82169C 10.4692 9.6976 10.4275 10.5109 10.4275 11.3243L 10.4275 16.1001L 13.9729 16.1001L 18.269 6.21481L 18.269 18.2899L 1.73097 18.2899L 1.73097 18.269Z"/>
+</defs>
+</svg>

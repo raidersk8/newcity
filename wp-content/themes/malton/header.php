@@ -16,7 +16,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body class="<?php if(is_blog ()) echo 'is-white-bg'; ?> <?php if(is_page_template('templates/objects.php')) echo 'is-left-white-bg'; ?>">
 	<div id="preloader"></div>
 	<header class="light-content">
 		<div class="top-part text-center">
@@ -38,7 +38,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-4 text-center col-xs-offset-4">
-					<a class="circle-btn no-preloader" href="#">
+					<a class="circle-btn no-preloader" href="<?php echo get_permalink(138); ?>">
 						<span class="circle"><img src="<?php echo get_bloginfo('template_url'); ?>/svg/map-marker.svg" alt="" /></span><br />
 						Калуга
 					</a>

@@ -10,14 +10,14 @@ function setting_pre_get_posts_for_custom_post($query) {
 	
 	if ( ! is_admin() && $query->is_main_query() ) {
 	  
-		if(is_post_type_archive('project') || is_post_type_archive('vacancy')) {
-			$query->set( 'posts_per_page', -1 );			
-		}
-	  
-		//Проверяем является ли запрос отображение записей в таксономии category_examples
-		if (is_tax('category_examples')) {
+		//Проверяем является ли запрос отображение записей в таксономии category_year
+		if (is_tax('category_year')) {
 			//Отключаем пагинацию на страница отображения по метки портфолио
 			$query->set( 'posts_per_page', -1 );
+		}
+		/*
+		if(is_post_type_archive('project') || is_post_type_archive('vacancy')) {
+			$query->set( 'posts_per_page', -1 );			
 		}
 		if(is_post_type_archive('project')) {
 			$query->set( 'posts_per_page', -1 );
@@ -55,7 +55,7 @@ function setting_pre_get_posts_for_custom_post($query) {
 				$posts_per_page = -1;
 			}
 			$query->set( 'posts_per_page', (int)$posts_per_page);
-		}
+		}*/
 	}
 }
 
@@ -223,6 +223,10 @@ function has_more() {
     global $post;
     if (empty($post)) return;
     return (bool) preg_match('/<!--more(.*?)?-->/', $post->post_content);
+}
+
+function is_blog () {
+    return ( is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag()) && 'post' == get_post_type();
 }
 
 ?>

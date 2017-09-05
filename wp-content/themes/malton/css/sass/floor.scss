@@ -1,0 +1,85 @@
+.floor-page {
+	background: url(../svg/choose-object.svg) left top no-repeat;
+	background-size: cover;
+}
+.floor-page .wrap-main-slide-window .main-slide-window .compass {
+	position: absolute;
+	bottom: 23px;
+	left: 23px;
+}
+.floor-page .entrance .img {
+	position: relative;
+	margin: 0 0 30px;
+}
+.floor-page .entrance .img img {
+	display: block;
+	position: relative;
+	height: auto;
+	width: 100%;
+}
+.floor-page .entrance .img .svg {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.floor-page .entrance .title {
+	color: #C20080;
+}
+.floor-page .total ul {
+	display: block;
+	margin: 0;
+	padding: 10px 0 0;
+	list-style: none;
+}
+.floor-page .total ul li {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.floor-page .total ul li:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: -20px;
+	top: 0;
+	top: 50%;
+	width: 10px;
+	height: 10px;
+	border: 1px solid transparent;
+	@include border-radius (50%);
+	margin-top: -5px;
+	
+}
+.floor-page .total ul li.sales {
+	color: #C4C4C4;
+}
+.floor-page .total ul li.sales:before {
+	background: #C4C4C4;
+	border-color: #C4C4C4;
+}
+.floor-page .total ul li.reserved {
+	color: #C20080;
+}
+.floor-page .total ul li.reserved:before {
+	background: #C20080;
+	border-color: #C20080;
+}
+.floor-page .total ul li.available {
+	color: #009ECC;
+}
+.floor-page .total ul li.available:before {
+	background: #009ECC;
+	border-color: #009ECC;
+}
+.floor-page .prices .price {
+	color: #009ECC;
+	font-size: 22px;
+	padding: 10px 0;
+	font-weight: 600;
+}
+.floor-page .prices .price.is-sale {
+	color: #C4C4C4;
+}

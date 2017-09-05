@@ -35,7 +35,7 @@ Template Post Type: example
 
 <?php //Получаем текущую таксономию ?>
 <?php $act_term = get_queried_object(); ?>
-<?php //Получаем таксономию ?>
+<?php //Получаем таксономии ?>
 <?php $terms = get_terms( 'example_term', array(
 	'hide_empty' => false,
 ) ); ?>

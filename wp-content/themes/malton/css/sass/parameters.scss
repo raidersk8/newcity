@@ -1,0 +1,23 @@
+.parameters-page {
+	
+}
+.parameters-page .right-part label {
+	font-weight: 400;
+}
+.parameters-page .right-part .title {
+	margin: 10px 0;
+}
+.parameters-page .right-part {
+	.left-num, .right-num {
+		font-size: 14px;
+		line-height: 10px;
+	}
+	.left-num {
+		position: relative;
+		left: -7px;
+	}
+	.right-num {
+		position: relative;
+		right: -5px;
+	}
+}

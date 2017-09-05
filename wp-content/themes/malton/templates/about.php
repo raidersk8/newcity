@@ -16,7 +16,7 @@ Template Post Type: page
 							<div class="col-xs-12">
 								<div class="global-left-padding">
 									<div class="row header">
-										<?php get_template_part('blocks/base/left-slide-window-header'); ?>
+										<?php get_template_part('blocks/base/left-slide-window-header-back'); ?>
 									</div>
 									<div class="row">
 										<div class="col-xs-11">
@@ -29,7 +29,7 @@ Template Post Type: page
 						</div>
 					</div>	
 				</div>
-				<div class="wrap-vertical-position light-content">
+				<div class="wrap-vertical-position light-content right-part">
 					<div class="vertical-middle">					
 						<div class="container-fluid">
 							<div class="row">

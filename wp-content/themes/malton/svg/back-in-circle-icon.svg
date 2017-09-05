@@ -1,0 +1,18 @@
+<svg width="40" height="40" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>menu-close-icon</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-759 -8480)">
+<g id="menu-close-icon">
+<g id="Ellipse">
+<use xlink:href="#path0_fill" transform="translate(759 8480)" fill="#C20080"/>
+</g>
+<g id="arrow-left">
+<use xlink:href="#path1_stroke" transform="matrix(6.12323e-17 -1 1 6.12323e-17 776 8506)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 40 20C 40 31.0457 31.0457 40 20 40C 8.9543 40 0 31.0457 0 20C 0 8.9543 8.9543 0 20 0C 31.0457 0 40 8.9543 40 20Z"/>
+<path id="path1_stroke" d="M -0.353553 5.64645C -0.548816 5.84171 -0.548816 6.15829 -0.353553 6.35355C -0.158291 6.54882 0.158291 6.54882 0.353553 6.35355L -0.353553 5.64645ZM 6 0L 6.35355 -0.353553C 6.15829 -0.548816 5.84171 -0.548816 5.64645 -0.353553L 6 0ZM 11.6464 6.35355C 11.8417 6.54882 12.1583 6.54882 12.3536 6.35355C 12.5488 6.15829 12.5488 5.84171 12.3536 5.64645L 11.6464 6.35355ZM 0.353553 6.35355L 6.35355 0.353553L 5.64645 -0.353553L -0.353553 5.64645L 0.353553 6.35355ZM 5.64645 0.353553L 11.6464 6.35355L 12.3536 5.64645L 6.35355 -0.353553L 5.64645 0.353553Z"/>
+</defs>
+</svg>

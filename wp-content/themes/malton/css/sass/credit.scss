@@ -1,0 +1,46 @@
+.credit-page .wrap-jcarousel ul li { 
+	margin-right: 30px;
+}
+.credit-page .right-part .text a { 
+	color: $a-color-yellow;
+}
+.credit-page .right-part .text a span {
+	color: #fff;
+} 
+.credit-page .wrap-jcarousel ul li a {
+	display: table;
+	height: 47px;
+}
+.credit-page .left-slide-window {
+	//background: url(../img/template-credit.png) 0px 0px no-repeat;
+}
+.credit-page .wrap-jcarousel {
+	position: relative;
+}
+
+.credit-page .wrap-jcarousel .jcarousel-prev {
+	position: absolute;
+	top: 50%;
+	left: -30px;
+	margin-top: -8px;
+	@include left-arrow (2px, 17px, 17px, #333);	
+}
+.credit-page .wrap-jcarousel .jcarousel-prev:hover {
+	border-color: $a-color-yellow;
+}
+.credit-page .wrap-jcarousel .jcarousel-next {
+	position: absolute;
+	top: 50%;
+	right: -30px;
+	margin-top: -8px;
+	@include right-arrow (2px, 17px, 17px, #333);	
+}
+.credit-page .wrap-jcarousel .jcarousel-next:hover {
+	border-color: $a-color-yellow;
+}
+.credit-page .wrap-jcarousel .jcarousel-next.inactive {
+	@include cros-opacity(0);
+}
+.credit-page .wrap-jcarousel .jcarousel-prev.inactive {
+	@include cros-opacity(0);
+}

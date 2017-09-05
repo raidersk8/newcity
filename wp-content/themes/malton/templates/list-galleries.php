@@ -11,10 +11,13 @@ Template Post Type: page
 	<div class="list-galleries main-bg-page full-height-page">
 		<div class="main-dark"></div>
 		<div class="year-selector">
-			<select class="selectpicker">
-			  <option>Mustard</option>
-			  <option>Ketchup</option>
-			  <option>Relish</option>
+			<select class="selectpicker-ref">
+			  <option value="<?php echo get_the_permalink(84); ?>" selected>Все</option>
+			  <?php $terms = get_terms( 'category_year', array(
+					'hide_empty' => false,
+				) ); foreach($terms as $row) : ?>
+			  <option value="<?php echo get_term_link( $row ); ?>"><?php echo $row->name; ?></option>
+			  <?php endforeach; ?>
 			</select>
 		</div>
 		<div class="container-fluid">
@@ -24,16 +27,7 @@ Template Post Type: page
 						<div class="jcarousel">
 							<ul>
 								<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-								<li>		
-									<div class="item">
-										<div class="img">
-											<img src="<?php echo get_the_post_thumbnail_url( $children->ID, 'image-820-520' ); ?>" alt="" />
-											<a href="<?php the_permalink(); ?>" class="more">Посмотреть<br />фотографии</a>
-										</div>
-										<div class="title"><?php the_title(); ?></div>
-										<div class="text"><?php the_content(); ?></div>
-									</div>
-								</li>
+									<?php get_template_part('blocks/base/list-galleries-item'); ?>
 								<?php endwhile; ?>
 								<li class="empty"></li>
 								<li class="empty"></li>

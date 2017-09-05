@@ -1,6 +1,34 @@
+.is-white-bg footer .copyright {
+    color: #333;
+}
+.is-white-bg footer {
+    color: #333;
+}
+.is-white-bg footer a {
+    color: #009ECC;
+}
+.is-white-bg .main-control-panel .circle-btn {
+    color: #333;
+}
 .main-bg-page {	
 	background: url(../img/about-page-bg.jpg) top left no-repeat;
 	background-size: cover;
+}
+
+.is-left-white-bg footer .copyright {
+    color: #333;
+}
+
+
+.main-dark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;	
+	z-index: 10;
+	background: #2F281D;
+	@include cros-opacity(0.85);
 }
 .full-height-page {
 	position: absolute;
@@ -15,7 +43,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #C20080;
+	background: url(../svg/preloader.svg) center center no-repeat #C20080;
 	z-index: 9999;
 }
 .global-left-padding {
@@ -23,6 +51,11 @@
 }
 .light-content {
 	color: #fff;
+}
+.light-content {
+	h1, .h1, h2, .h2, h3, .h3 {
+		color: #fff;
+	}
 }
 .dark-content {
 	color: #484848;
@@ -32,7 +65,7 @@
     top: 81px;
     right: 0;
     width: 25%;
-	z-index: 100;
+	z-index: 150;
 }
 .wrap-main-logo {
 	position: absolute;
@@ -49,7 +82,7 @@
 }
 header {
 	position: relative;
-	z-index: 110;
+	z-index: 200;
 }
 header .top-part {
 	position: relative;
@@ -89,7 +122,7 @@ footer {
 	line-height: 16px;
 	color: #fff;
 	height: 71px;
-	z-index: 10;
+	z-index: 110;
 	font-weight: 600;
 }
 footer .text {
@@ -174,9 +207,14 @@ $delay-left-slide-window: 0.5s;
 //Состояние навигации послее анимации
 .open-active-window.end-open-active-window .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window,
 .close-active-window .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window {
-	left: 57%;
+	left: 0;
 	margin-left: -30px;
 }
+.open-active-window.end-open-active-window.show-window-docs .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window {
+	display: none;
+}
+
+
 .close-active-window .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window .jcarousel-pagination a,
 .open-active-window.end-open-active-window .front-page .wrap-jcarousel .jcarousel-nav.animation-before-after-show-window .jcarousel-pagination a {
 	border-color: #C20080;
@@ -203,6 +241,11 @@ $delay-left-slide-window: 0.5s;
 	padding-top: 81px;
 	margin-bottom: 53px;
 }
+.wrap-left-slide-window .left-slide-window .wrap-header {
+	position: relative;
+	background: #fff;
+	z-index: 30;
+}
 .wrap-left-slide-window .left-slide-window .header .logo {
 	display: inline-block;
 	width: 110px;
@@ -215,7 +258,7 @@ $delay-left-slide-window: 0.5s;
     padding-top: 12px;
     font-weight: 700;
 }
-.wrap-left-slide-window .left-slide-window .header .close-window {
+.wrap-left-slide-window .left-slide-window .header .close-btn {
 	position: relative;
 	display: block;
 	color: #C20080;
@@ -228,10 +271,10 @@ $delay-left-slide-window: 0.5s;
 	@include animation-transition (1s, all, ease-out, 0s);
 	@include cros-opacity(0);
 }
-.wrap-left-slide-window.active-window .header .close-window {
+.wrap-left-slide-window.active-window .header .close-btn {
 	@include cros-opacity(1);
 }
-.wrap-left-slide-window .left-slide-window .close-window:before {
+.wrap-left-slide-window .left-slide-window .close-btn.close-icon:before {
 	content: '';
 	display: inline-block;
 	position: absolute;
@@ -243,6 +286,19 @@ $delay-left-slide-window: 0.5s;
 	color: #fff;
 	@include border-radius (50%);
 	background: url(../svg/close.svg) center center no-repeat #C20080;
+}
+.wrap-left-slide-window .left-slide-window .close-btn.back-icon:before {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 40px;
+	height: 40px;
+	background: #C20080;
+	color: #fff;
+	@include border-radius (50%);
+	background: url(../svg/arrow-left-white.svg	) center center no-repeat #C20080;
 }
 .wrap-main-slide-window {
     position: absolute;
@@ -268,6 +324,12 @@ $delay-left-slide-window: 0.5s;
 	color: #C20080;
 	margin: 0 0 60px;
 }
+.wrap-main-slide-window .main-slide-window .docs .item.doc-item {
+	color: #009ECC;
+}
+.wrap-main-slide-window .main-slide-window .docs .item.xls-item {
+	color: #00CC80;
+}
 .wrap-main-slide-window .main-slide-window .docs .item span {
 	color: #000;
 }
@@ -281,7 +343,7 @@ $delay-left-slide-window: 0.5s;
 	right: 0;
 	top: 0;
 	width: 314px;
-	z-index: 100;
+	z-index: 150;
 	height: 100%;
 }
 .main-menu .inner {
@@ -337,6 +399,15 @@ $delay-left-slide-window: 0.5s;
 	position: relative;
 	text-decoration: none;
 }
+.main-menu ul li a:hover {
+	color: $a-color-yellow;	
+}
+.main-menu ul li.current-menu-item > a {
+	color: $a-color-yellow;	
+}
+.main-menu ul li.current-menu-parent > a {
+	color: $a-color-yellow;	
+}
 .main-menu ul li.menu-item-has-children > a {
 	padding-right: 18px;
 }
@@ -377,17 +448,6 @@ $delay-left-slide-window: 0.5s;
 }
 .main-menu a {
 	color: #fff;
-}
-
-.main-dark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;	
-	z-index: 10;
-	background: #2F281D;
-	@include cros-opacity(0.85);
 }
 .main-content {
 	position: relative;
@@ -440,4 +500,74 @@ $delay-left-slide-window: 0.5s;
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.paginate {
+    padding: 25px 0;
+}
+.paginate .page-numbers {
+	display: inline-block;
+	position: relative;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #009ECC;
+	text-align: center;
+	text-decoration: none;
+	color: #009ECC;
+	margin-right: 6px;
+	@include border-radius (50%);
+	padding: 2px 0 0;
+    top: 0;
+}
+
+.paginate .page-numbers.current {
+	background: #009ECC;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    top: -1px;
+    padding: 6px 0 0;	
+}
+.mini-map .wrap-svg {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.mini-map .wrap-svg .info {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin: -60px 0 0;
+	text-align: center;
+	font-size: 36px;
+    line-height: 48px;
+    font-weight: 800;
+}
+.mini-map .wrap-svg .info .num-border {
+	border-bottom: 1px solid #fff;
+	padding: 0 0 1px;
+}
+.mini-map .prev-arrow {
+	display: inline-block;
+	@include left-arrow (1px, 10px, 10px, #fff);
+	margin-top: 27px;
+}
+
+.mini-map .next-arrow {
+	display: inline-block;
+	@include right-arrow (1px, 10px, 10px, #fff);
+	margin-top: 27px;
+}
+.mini-map .change-param .num {
+	font-size: 48px;
+	line-height: 64px;
+	font-weight: 700;
+}
+.compass {
+	width: 110px;
+	height: 110px;
+	background: url(../svg/compass.svg) 0px 0px no-repeat;
+}
+.slider-selection {
+	background: $a-color-yellow !important;
 }

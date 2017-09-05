@@ -1,0 +1,22 @@
+<svg width="30" height="40" viewBox="0 0 30 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>XLS-Icon</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-79 -3945)">
+<g id="XLS-Icon">
+<g id="Rectangle 6">
+<use xlink:href="#path0_fill" transform="translate(79 3945)" fill="#00CC80"/>
+</g>
+<g id="Vector 6">
+<use xlink:href="#path1_fill" transform="translate(99 3945)" fill="#00A265"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_fill" transform="translate(84 3960)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 40L 30 40L 30 10L 20 0L 0 0L 0 40Z"/>
+<path id="path1_fill" d="M 0 10L 0 0L 10 10L 0 10Z"/>
+<path id="path2_fill" d="M 0 0L 0 20L 20 20L 20 0L 0 0ZM 18.269 18.269L 1.73097 18.269L 1.73097 1.73097L 18.269 1.73097L 18.269 18.269ZM 16.976 12.6382L 13.7435 12.6382L 11.9917 10.4275L 15.5162 6.02711L 10.6361 6.02711L 9.55162 7.38269L 8.46715 6.02711L 3.58707 6.02711L 7.11157 10.4275L 3.58707 14.8279L 13.1178 14.8279L 11.8665 16.3921L 16.976 16.3921L 15.4745 14.5151L 16.976 12.6382ZM 11.0115 14.2231L 4.9635 6.67362L 5.67258 6.67362L 11.7205 14.2231L 11.0115 14.2231Z"/>
+</defs>
+</svg>

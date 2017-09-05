@@ -37,10 +37,12 @@ function theme_name_scripts() {
 	//jquery
 	//wp_enqueue_script( 'jquery-2', get_template_directory_uri() . '/js/jquery.min.js' );
 	
-	//ui-slider
+	//ui-slider(слайдер не нужен нужны только эфекты)
 	wp_enqueue_script( 'jquery-ui', get_template_directory_uri() . '/js/jquery-ui/jquery-ui.min.js' );
+	//Slider
+	wp_enqueue_script( 'slider', get_template_directory_uri() . '/js/bootstrap-slider.min.js' );
 	//Плагин что бы на мобильных версиях плагины ui хорошо взаимодействовали с касанием
-	wp_enqueue_script( 'touch-punch', get_template_directory_uri() . '/js/jquery-ui/jquery.ui.touch-punch.min.js' );
+	//wp_enqueue_script( 'touch-punch', get_template_directory_uri() . '/js/jquery-ui/jquery.ui.touch-punch.min.js' );
 	
 	//wrap-jcarousel и все что нужно для этого плагина
 	wp_enqueue_script( 'jcarousel', get_template_directory_uri() . '/js/jcarousel/jquery.jcarousel.min.js' );
@@ -75,7 +77,8 @@ function theme_name_scripts() {
 	wp_enqueue_script( 'malton-plagins', get_template_directory_uri() . '/js/malton-plagins.js' );
 	
 	//Инициализация всего
-	wp_enqueue_script( 'svg', get_template_directory_uri() . '/js/svg.min.js' );
+	wp_enqueue_script( 'svg', get_template_directory_uri() . '/js/snap.svg-min.js' );
+	wp_enqueue_script( 'maskedinput', get_template_directory_uri() . '/js/jquery.maskedinput.min.js' );
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js' );
 	wp_enqueue_script( 'map', get_template_directory_uri() . '/js/map.js' );
 	
