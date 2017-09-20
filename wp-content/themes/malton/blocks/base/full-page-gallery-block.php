@@ -1,3 +1,4 @@
+<?php global $backLink; ?>
 <div class="full-page-gallery">
 	<?php if( have_rows('gallery') ) : ?>
 		<div class="wrap-jcarousel jcarousel-with-animation" data-autoscroll="0" data-wrap="circular" data-responsivecountitem="1" data-isfullheight="true">
@@ -23,7 +24,7 @@
 			</div>
 			<div class="jcarouse-control-panel">
 				<a href="#" class="jcarousel-prev no-preloader"></a>
-				<a href="#" onclick="history.back();" class="prev-page"><span class="icon"></span></a>
+				<a href="<?php echo $backLink; ?>" class="prev-page"><span class="icon"></span></a>
 				<a href="#" class="jcarousel-next no-preloader"></a>
 			</div>				
 		</div>

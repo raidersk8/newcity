@@ -12,11 +12,11 @@ global $wp_query, $post;
 				</div>
 				<div class="col-xs-4 phone">
 					<div class="row">
-						<div class="col-xs-8 text-right">(4842) 222-888</div>
+						<div class="col-xs-8 text-right"><?php the_field('phone', 'options'); ?></div>
 					</div>
 				</div>	
 				<div class="col-xs-4 email">
-					<i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info-ng40@yandex.ru">info-ng40@yandex.ru</a>
+					<i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:<?php the_field('email', 'options'); ?>"><?php the_field('email', 'options'); ?></a>
 				</div>								
 			</div>
 		</div>

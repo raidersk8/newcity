@@ -18,16 +18,30 @@ Template Post Type: page
 									<div class="row header">
 										<?php get_template_part('blocks/base/left-slide-window-header-back'); ?>
 									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
+					<div class="wrap-scroll-pane">
+						<div class="scroll-pane">
+							<div class="inner-scroll-pane">
+								<div class="container-fluid">
 									<div class="row">
-										<div class="col-xs-11">
-											<h3><?php the_title(); ?></h3>
-											<?php the_content(); ?>
+										<div class="col-xs-12">
+											<div class="global-left-padding">
+												<div class="row">
+													<div class="col-xs-11">
+														<h3><?php the_title(); ?></h3>
+														<?php the_content(); ?>
+													</div>
+												</div>												
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>	
+					</div>
 				</div>
 				<div class="wrap-vertical-position light-content right-part">
 					<div class="vertical-middle">					

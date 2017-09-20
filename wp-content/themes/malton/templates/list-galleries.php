@@ -23,7 +23,7 @@ Template Post Type: page
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-9 col-xs-offset-2">
-					<div class="wrap-jcarousel" data-autoscroll="0">
+					<div class="wrap-jcarousel" data-autoscroll="0" data-isswipe="false">
 						<div class="jcarousel">
 							<ul>
 								<?php while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -34,8 +34,8 @@ Template Post Type: page
 								<li class="empty"></li>
 							</ul>
 						</div>
-						<a href="#" class="jcarousel-prev no-preloader"></a>
-						<a href="#" class="jcarousel-next no-preloader"></a>			
+						<a href="#" class="jcarousel-prev-custom no-preloader"></a>
+						<a href="#" class="jcarousel-next-custom no-preloader"></a>			
 					</div>
 				</div>
 			</div>

@@ -76,7 +76,7 @@ while ( $query->have_posts() ) {
 										<a href="/" class="logo"></a>
 									</div>
 									<div class="col-xs-5 phone text-right">
-										(4842) 222-888
+										<?php the_field('phone', 'options'); ?>
 									</div>
 								</div>	
 								<div class="row">
@@ -84,7 +84,7 @@ while ( $query->have_posts() ) {
 										<div class="h1">Выбор<br />квартир</div>
 										<div class="text-1">Выберите подъезд</div>
 										<div class="selection-param">
-											<a href="#"><span>Подбор по параметрам</span></a>
+											<a href="<?php echo get_permalink(263); ?>"><span>Подбор по параметрам</span></a>
 										</div>
 										<div class="wrap-docs">
 											<a class="docs switch-slide-window no-preloader" href="#slide-window-front-page" data-add-class="show-window-docs" data-sub-href="#slide-window-front-page-docs"><i class="fa fa-file-text" aria-hidden="true"></i><span>Документы</span></a>

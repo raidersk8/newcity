@@ -17,7 +17,7 @@
     <![endif]-->
   </head>
   <body class="<?php if(is_blog ()) echo 'is-white-bg'; ?> <?php if(is_page_template('templates/objects.php')) echo 'is-left-white-bg'; ?>">
-	<div id="preloader"></div>
+	<div id="preloader" style="background-image: url(<?php the_field('pre-img'); ?>);"></div>
 	<header class="light-content">
 		<div class="top-part text-center">
 			Скидка 10% на 2-х комнатные квартиры при оформлении ипотеки до конца месяца! <a href="#">Подробнее</a>

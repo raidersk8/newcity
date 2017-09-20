@@ -128,7 +128,7 @@
 }
 .front-page .wrap-jcarousel .jcarousel ul li .inner .animate-btn {
 	animation-name: fadeOutRight;
-	animation-delay: 0.7s;
+	animation-delay: 0.7s;	
 }
 .front-page .wrap-jcarousel .jcarousel ul li.active .inner .animate-btn {
 	animation-name: fadeInRight;
@@ -139,6 +139,7 @@
 	font-weight: 600;
 	display: inline-block;
 	margin-left: 20px;
+	font-size: 18px;
 	animation-name: fadeOutUp;
 	animation-delay: 0s;
 }
@@ -175,12 +176,16 @@
 .front-page .wrap-docs a span {
 	color: #fff;
 }
+.is-show-menu .front-page .main-title {
+	@include cros-opacity(0);
+}
 .front-page .main-title {
 	position: absolute;
 	top: 50%;
 	right: 15px;
 	margin-top: -46px;
 	z-index: 10;
+	@include animation-transition ($speed-left-slide-window, all, ease-out, 0);
 }
 .front-page .main-title .h3 {
 	font-weight: 900;

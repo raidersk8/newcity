@@ -10,6 +10,7 @@
 .floor-page .entrance .img {
 	position: relative;
 	margin: 0 0 30px;
+	cursor: pointer;
 }
 .floor-page .entrance .img img {
 	display: block;
@@ -31,7 +32,7 @@
 	display: block;
 	margin: 0;
 	padding: 10px 0 0;
-	list-style: none;
+	list-style: none; 
 }
 .floor-page .total ul li {
 	display: block;

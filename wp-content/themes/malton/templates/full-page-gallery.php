@@ -3,6 +3,8 @@
 Template Name: full-page-gallery
 Template Post Type: page
 */
+global $backLink;
+$backLink = get_permalink(80);
 ?>
 <?php get_header(); ?>	
 <?php if( have_posts() ) : the_post(); ?>

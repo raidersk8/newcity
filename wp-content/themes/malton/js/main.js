@@ -28,11 +28,13 @@ $(".fancybox").fancybox({
 	minWidth: 500,
 });
 
-$("input.slider").slider();
+$("input.slider").slider({
+	tooltip: 'always',
+	tooltip_split: true,
+});
 //Для инициализации плагинов которым важно дождаться загрузки картинок
 $(window).load(
 	function() {			
-		$('#preloader').fadeOut(500);
 		$('#sliderScrollbar').sliderScrollbar();
 		fullWindowHeight();
 		
@@ -47,6 +49,9 @@ $(window).load(
 		$('.blog .wrap-jcarousel').wrapJcarousel();		
 	}
 );
+window.onpageshow= function() {	
+	$('#preloader').fadeOut(500);
+};
 $( window ).resize(function() {
 	fullWindowHeight();
 });
@@ -182,7 +187,7 @@ $('#show-main-menu').on('click', function() {
 
 
 //Перемещаем на нужную картинку в галере по клику на элемент
-$('.list-galleries .wrap-jcarousel ul li').on('click', function() {
+$('.list-galleries .wrap-jcarousel ul li:not(.empty)').on('click', function() {
 	$('.list-galleries .wrap-jcarousel .jcarousel').jcarousel('scroll', $(this));
 });
 $(".mask-phone").mask("+7 (999) 999 99-99");
@@ -316,5 +321,27 @@ $(window).load(function() {
 	if($(flat_svg).length) {
 		var svgDocumentFlat = flat_svg.contentDocument; 
 		$(svgDocumentFlat.getElementById("flat-polygon")).attr('fill',$('#for-flat-polygon').data('fill'));
+		$(svgDocumentFlat.getElementById("flat-polygon")).attr('fill-opacity', '0.5');
 	}
+});
+$('.parameters-page form input').on('change', function() {
+	$('.parameters-page form').addClass('is-change');
+});
+
+$(function() {
+	$('.scroll-pane').jScrollPane({ contentWidth: '0px'});
+});
+
+$('.list-galleries .wrap-jcarousel .jcarousel-next-custom').on('click', function() {
+	var actLi = $('.list-galleries .wrap-jcarousel .jcarousel ul li.active');
+	var actIndex = $('.list-galleries .wrap-jcarousel .jcarousel ul li').index(actLi);
+	if(!$('.list-galleries .wrap-jcarousel .jcarousel ul li').eq(actIndex+1).hasClass('empty')) {
+		$('.list-galleries .wrap-jcarousel .jcarousel').jcarousel('scroll', '+=1');
+	}
+	return false;
+});
+
+$('.list-galleries .wrap-jcarousel .jcarousel-prev-custom').on('click', function() {
+	$('.list-galleries .wrap-jcarousel .jcarousel').jcarousel('scroll', '-=1');
+	return false;
 });

@@ -91,6 +91,7 @@ label {
   border-radius: 0;
   font-weight: 600;
   letter-spacing: 0.6px;
+  @include animation-transition (0.3s, all, ease-out, 0s);
 }
 a.btn { 
 	text-decoration: none;
@@ -177,6 +178,95 @@ a.btn {
     border-radius: 0;
 }
 
+.table > thead > tr > th {
+	border-color: #009ECC;
+}
+
+.table > tbody > tr > th, .table > tfoot > tr > th, .table > tbody > tr > td, .table > tfoot > tr > td {
+	border-color: #E5E5E5;
+}
+
+
+
+.btn-transparent {
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+}
+.btn-transparent:focus,
+.btn-transparent.focus {
+  color: #fff;
+  background-color: $a-color-yellow;
+  border-color: $a-color-yellow;
+}
+.btn-transparent:hover {
+  color: #fff;
+  background-color: $a-color-yellow;
+  border-color: $a-color-yellow;
+}
+.btn-transparent:active,
+.btn-transparent.active,
+.open > .dropdown-toggle.btn-default {
+  color: #fff;
+  background-color: $a-color-yellow;
+  border-color: $a-color-yellow;
+}
+
+
+
+.btn-transparent-2 {
+  color: #C20080;
+  background-color: transparent;
+  border-color: #C20080;
+}
+.btn-transparent-2:focus,
+.btn-transparent-2.focus {
+  color: #C20080;
+  background-color: transparent;
+  border-color: #C20080;
+}
+.btn-transparent-2:hover {
+  color: #fff;
+  background-color: #C20080;
+  border-color: #C20080;
+}
+.btn-transparent-2:active,
+.btn-transparent-2.active,
+.open > .dropdown-toggle.btn-default {
+  color: #fff;
+  background-color: #C20080;
+  border-color: #C20080;
+}
+
+
+
+.btn-transparent-3 {
+  color: #009ECC;
+  background-color: transparent;
+  border-color: #009ECC;
+}
+.btn-transparent-3:focus,
+.btn-transparent-3.focus {
+  color: #009ECC;
+  background-color: transparent;
+  border-color: #009ECC;
+}
+.btn-transparent-3:hover {
+  color: #fff;
+  background-color: #009ECC;
+  border-color: #009ECC;
+}
+.btn-transparent-3:active,
+.btn-transparent-3.active,
+.open > .dropdown-toggle.btn-default {
+  color: #fff;
+  background-color: #009ECC;
+  border-color: #009ECC;
+}
+
+
+
+
 .btn-circle {
 	width: 30px;
 	height: 30px;
@@ -190,10 +280,32 @@ a.btn {
 .btn-circle:hover {
 	color: #fff;
 }
-.btn-circle:focus {
+.btn-circle:focus, .btn-circle.focus {
 	color: #fff;
 }
 .btn-circle.active {
 	background: $a-color-yellow;	
 	border-color: $a-color-yellow;	
+}
+.table > thead > tr > th {
+    vertical-align: top;
+    text-align: center;
+}
+.tooltip { 
+	font-size: 18px;
+	font-weight: 900;
+}
+.tooltip-inner {
+    color: $a-color-yellow;
+    border-color: transparent;
+	background: transparent;
+}
+.tooltip.top .tooltip-arrow, .tooltip.bottom .tooltip-arrow {
+	display: none;
+}
+.table-hover > tbody > tr:hover {
+	background-color: transparent;
+}
+.table-hover > tbody > tr:hover td {
+	border-color: #C20080;
 }

@@ -75,27 +75,49 @@ ksort($flats_info['flats_count_arr']);
 								</div>
 								<div class="row entrance">
 									<?php
-									if(get_field('type-img', $act_term) == 'vertical') {
-										echo '<div class="col-xs-4">';
-										entranceImg($act_term);
-										echo '</div><div class="col-xs-3">';
-										entranceTotal($flats_info);	
-										entrancePrices($flats_info);	
-										echo '</div><div class="col-xs-4">';
-										entranceText($flats_link_section);
-										echo '</div>';
-									} else {
-										echo '<div class="col-xs-7">';
-										entranceImg($act_term);
-										echo '</div><div class="col-xs-5">';
-										entranceText($flats_link_section);
-										echo '</div><div class="clearfix"></div><div class="col-xs-4">';
-										entranceTotal($flats_info);
-										echo '</div><div class="col-xs-4">';
-										entrancePrices($flats_info);
-										echo '</div>';
-									}
-									?>								
+									if(get_field('type-img', $act_term) == 'vertical') : ?>
+										<div class="col-xs-4">
+											<?php entranceImg($act_term); ?>
+										</div>
+										<div class="col-xs-7">
+											<div class="row">
+												<div class="col-xs-6">
+													<?php entranceTotal($flats_info); ?>	
+													<?php entrancePrices($flats_info);	 ?>
+												</div>
+												<div class="col-xs-6">
+													<?php entranceText($flats_link_section); ?>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-6">
+													<a href="<?php echo get_permalink(263); ?>" class="btn btn-block btn-transparent-2 text-center text-uppercase">Подбор по<br />параметрам</a>
+												</div>
+												<div class="col-xs-6">
+													<a href="<?php echo get_permalink(97); ?>" class="btn btn-block btn-transparent-3 text-center text-uppercase">рассчитать<br />ипотеку</a>
+												</div>
+											</div>
+										</div>';
+									<?php else : ?>
+										<div class="col-xs-7">
+											<?php entranceImg($act_term); ?>
+										</div>
+										<div class="col-xs-5">
+											<?php entranceText($flats_link_section); ?>
+										</div>
+										<div class="clearfix"></div>
+										<div class="col-xs-4">
+											<?php entranceTotal($flats_info); ?>
+										</div>
+										<div class="col-xs-3 no-p">
+											<?php entrancePrices($flats_info); ?>
+										</div>
+										<div class="col-xs-3 col-xs-offset-1">
+											<a href="<?php echo get_permalink(263); ?>" class="btn btn-block btn-transparent-2 text-center text-uppercase">Подбор по<br />параметрам</a>
+											<br/>
+											<a href="<?php echo get_permalink(97); ?>" class="btn btn-block btn-transparent-3 text-center text-uppercase">рассчитать<br />ипотеку</a>
+										</div>';
+									<?php endif; ?>								
 								</div>
 							</div>
 						</div>

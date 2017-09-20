@@ -14,7 +14,7 @@ $posts = get_posts(array(
 	'meta_query' => array(
 		array(
 			'key' => 'flats', // name of custom field
-			'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+			'value' => '"' . get_the_ID() . '"',
 			'compare' => 'LIKE'
 		)
 	)
@@ -34,6 +34,23 @@ $status_flats_to_color = array(
 	'reserved' => '#C20080',
 	'available' => '#009ECC',
 );
+
+//Для построенния ссылки поиска по параметрам
+
+function actualParam($val) {
+	return ($val < 1) ? $val : $val;
+}
+$minPrice = substr(number_format(get_field('price')-100000, 0, ',', '.'), 0, 3);
+$maxPrice = substr(number_format(get_field('price')+100000, 0, ',', '.'), 0, 3);
+$getToParam = array(
+	'num-house' => array(0 => $actHouse),
+	'count-room' => array(0 => $arrDescriptionBlock['count-room']),
+	'range-floor' => actualParam((int)get_field('floor')-1).','.actualParam((int)get_field('floor')+1),
+	'range-area' => actualParam((int)get_field('total-area')-5).','.actualParam((int)get_field('total-area')+5),
+	'range-price' => $minPrice.','.$maxPrice,	
+);
+$urlParam = get_permalink(263).'?'.http_build_query($getToParam);
+
 ?>
 <div id="for-flat-polygon" data-fill="<?php echo $status_flats_to_color[get_field('status')]; ?>" style="display: none;"></div>
 	<div class="flat-page full-height-page">
@@ -67,24 +84,41 @@ $status_flats_to_color = array(
 												<div class="col-xs-3 col-xs-offset-1 action-block">
 													<?php actionBlock(); ?>
 												</div>
+												<div class="col-xs-3">
+													<a href="<?php echo $urlParam; ?>" class="btn btn-block btn-transparent-2 text-center text-uppercase">Подбор по<br />параметрам</a>
+													<br/>
+													<a href="<?php echo get_permalink(97); ?>" class="btn btn-block btn-transparent-3 text-center text-uppercase">рассчитать<br />ипотеку</a>
+												</div>
 											</div>
 										<?php else : ?>
 											<div class="row top-part">
 												<div class="col-xs-4">
 													<?php svgBlock(get_field('svg')); ?>
 												</div>
-												<div class="col-xs-4">
-													<div class="row bottom-part">
-														<div class="col-xs-12 action-block">
-															<?php saleBlock(); ?>
+												<div class="col-xs-7">
+													<div class="row">
+														<div class="col-xs-6">														
+															<div class="row bottom-part">
+																<div class="col-xs-12 action-block">
+																	<?php saleBlock(); ?>
+																</div>
+																<div class="col-xs-12 action-block">
+																	<?php actionBlock(); ?>
+																</div>
+															</div>	
 														</div>
-														<div class="col-xs-12 action-block">
-															<?php actionBlock(); ?>
+														<div class="col-xs-6">
+															<?php descriptionBlock($arrDescriptionBlock); ?>
 														</div>
-													</div>	
-												</div>
-												<div class="col-xs-4">
-													<?php descriptionBlock($arrDescriptionBlock); ?>
+													</div>
+													<div class="row">
+														<div class="col-xs-6">
+															<a href="<?php echo $urlParam; ?>" class="btn btn-block btn-transparent-2 text-center text-uppercase">Подбор по<br />параметрам</a>
+														</div>
+														<div class="col-xs-6">
+															<a href="<?php echo get_permalink(97); ?>" class="btn btn-block btn-transparent-3 text-center text-uppercase">рассчитать<br />ипотеку</a>
+														</div>
+													</div>
 												</div>
 											</div>								
 										<?php endif; ?>
@@ -123,12 +157,12 @@ $status_flats_to_color = array(
 	<div class="title sale">Скидка!</div>
 	На данную квартиру возможна скидка!<br />
 	Подробности по тел.:<br />
-	<b>+7 (4842) 222-888</b>
+	<b><?php the_field('phone', 'options'); ?></b>
 <?php } ?>
 <?php function actionBlock() { ?>
 	<div class="title action">Акция!</div>
 	Кратко про акцию! Суть и выгоды участия.<br />
 	Подробности по тел.:<br />
-	<b>+7 (4842) 222-888</b>
+	<b><?php the_field('phone', 'options'); ?></b>
 <?php } ?>
 <?php get_footer(); ?>

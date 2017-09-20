@@ -18,9 +18,9 @@ function runMultiple(jcarousel)
 	jcarousel.jcarousel('scroll', '+=1');	
 }
 (function( $ ){
-
 var methods = {
 	init : function( options ) { 
+		var timerMulti;
 		var settings = $.extend( {
 			animation: {
 				duration: 900,
@@ -34,6 +34,7 @@ var methods = {
 			isfullheight: false,
 			connectorCarousel: false,
 			scrollendFunc: function() {},
+			isswipe: true,
 		}, options);
 		
 		//Функция для связи двух слайдеров
@@ -54,7 +55,9 @@ var methods = {
 			//Ининициализируем связь между слайдерами
 			initConnected(wrapJcarousel, jcarousel, carousel);
 			//Ининициализируе пагинации листалка пальцами
-			initSwipe(wrapJcarousel, jcarousel, carousel);
+			if(settings.isswipe) {
+				initSwipe(wrapJcarousel, jcarousel, carousel);
+			}
 		}
 		
 		
@@ -105,7 +108,7 @@ var methods = {
             });
 			
 			if(settings.autoscroll > 0) {
-				var timerMulti = window.setInterval(runMultiple, settings.autoscroll, jcarousel);
+				timerMulti = window.setInterval(runMultiple, settings.autoscroll, jcarousel);
 				/*jcarousel.jcarouselAutoscroll({
 					interval: settings.autoscroll,
 					target: '+=1',
@@ -286,7 +289,12 @@ var methods = {
 			
 			//Инициализация элемтов управления
 			if(jcarouselPrev.length) {	
-				jcarouselPrev
+				jcarouselPrev.on('click', function() {
+					window.clearTimeout(timerMulti);
+					if(settings.autoscroll > 0) {
+						timerMulti = window.setInterval(runMultiple, settings.autoscroll, jcarousel);
+					}					
+				})
 				.on('jcarouselcontrol:active', jcarouselcontrolActive)
 				.on('jcarouselcontrol:inactive', jcarouselcontrolInactive)
 				.jcarouselControl({
@@ -295,7 +303,12 @@ var methods = {
 				});
 			}
 			if(jcarouselNext.length) {	
-				jcarouselNext
+				jcarouselNext.on('click', function() {
+					window.clearTimeout(timerMulti);
+					if(settings.autoscroll > 0) {
+						timerMulti = window.setInterval(runMultiple, settings.autoscroll, jcarousel);
+					}					
+				})
 				.on('jcarouselcontrol:active', jcarouselcontrolActive)
 				.on('jcarouselcontrol:inactive', jcarouselcontrolInactive)
 				.jcarouselControl({

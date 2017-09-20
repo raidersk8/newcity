@@ -15,7 +15,7 @@ Template Post Type: page
 							<div class="col-xs-12">
 								<div class="global-left-padding">
 									<div class="row header">
-										<?php get_template_part('blocks/base/left-slide-window-header'); ?>
+										<?php get_template_part('blocks/base/left-slide-window-header-back'); ?>
 									</div>
 									<div class="row">
 										<div class="col-xs-12">
@@ -24,17 +24,10 @@ Template Post Type: page
 									</div>
 									<div class="row">
 										<div class="col-xs-6">
-											<p><label>Телефон отдела продаж:</label><Br />
-											+7 (4842) 222-888</p>
-											<p><label>Адрес отдела продаж: </label><Br />
-											г. Калуга, ул. Хрустальная, д. 1Б</p>
-											<p><label>E-mail:</label> info-ng40@yandex.ru</p>
+											<?php the_field('left-part'); ?>
 										</div>
 										<div class="col-xs-6">
-											<p><label>Время работы:</label><Br />
-											Пн-Пт      с 9:00 до 19:00<Br />
-											Сб             с 10:00 до 14:00</p>
-											<p><label>Мы работаем без перерыва на обед.</label></p>
+											<?php the_field('right-part'); ?>
 										</div>
 									</div>
 								</div>

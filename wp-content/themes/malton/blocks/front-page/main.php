@@ -67,7 +67,7 @@
 												<div class="global-left-padding">
 													<h2 class="h1 animated animate-title"><?php the_sub_field('title'); ?></h2>
 													<h3 class="h3 animated animate-sub-title"><?php the_sub_field('text-1'); ?></h3>
-													<a href="#" class="btn btn-eggplant text-uppercase animated animate-btn no-preloader">Подобрать квартиру</a> <span class="hide-before-show-window"><a href="#slide-window-front-page" data-sub-href="#slide-window-front-page-jcarousel" class="more animated switch-slide-window no-preloader"><span>Подробнее</span></a></span>
+													<a href="<?php echo get_permalink(263); ?>" class="btn btn-eggplant text-uppercase animated animate-btn">Подобрать квартиру</a> <span class="hide-before-show-window"><a href="#slide-window-front-page" data-sub-href="#slide-window-front-page-jcarousel" class="more animated switch-slide-window no-preloader"><span>Подробнее</span></a></span>
 												</div>
 											</div>
 										</div>
@@ -75,7 +75,7 @@
 								</div>
 							</div>
 						</li>
-						<?php endwhile; ?>
+						<?php endwhile; wp_reset_postdata(); ?>
 					<?php endif; ?>				
 					</ul>
 				</div>
@@ -91,8 +91,8 @@
 		</div>
 	</div>
 	<div class="main-title hide-before-show-window">
-		<h1 class="h3">ЖК «Новые Черёмушки»</h1>
-		<div class="text">пересечение<br />ул. Жукова и ул. Хрустальной</div>
+		<h1 class="h3"><?php the_field('title'); ?></h1>
+		<div class="text"><?php the_field('address'); ?></div>
 	</div>
 	<div class="wrap-docs hide-before-show-window">
 		<div class="container-fluid">

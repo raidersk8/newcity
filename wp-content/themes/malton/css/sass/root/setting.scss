@@ -23,6 +23,8 @@ $media-sm-min-width: $media-sm-container + 18px;
 $media-md-max-width: 1200px;
 $media-xs-max-width: 768px;
 
+$speed-left-slide-window: 0.5s;
+$delay-left-slide-window: 0.5s;
 
 
 @mixin right-arrow ($border_width, $pxwidth, $pxheight, $color) {

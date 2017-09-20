@@ -13,7 +13,7 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 90px;
+	width: 6px;
 	height: 100%;
 }
 
@@ -39,7 +39,7 @@
 
 .jspTrack {
 	position: relative;
-	width: 30px;
+	width: 6px;
 	margin: 0 auto;
 }
 .jspTrack:before {
@@ -47,13 +47,13 @@
 	display: block;
 	position: absolute;
 	height: 100%;
-	border-right: 2px solid #000;
-	width: 16px;
+	border: none;
+	width: 6px;
 }
 
 
 .jspDrag {
-	width: 30px;
+	width: 6px;
 	position: relative;
 	top: 0;
 	left: 0;
@@ -67,12 +67,8 @@
 	top: 0;
 	display: block;
 	position: absolute;
-	border: 2px solid #000;
-	-moz-border-radius: 50%; /* Firefox */
-	-webkit-border-radius: 50%; /* Safari, Chrome */
-	-khtml-border-radius: 50%; /* KHTML */
-	border-radius: 50%; /* CSS3 */
-	background: #F2F2F2;
+	border: none;
+	background: #009ECC;
 }
 
 .jspHorizontalBar .jspTrack,

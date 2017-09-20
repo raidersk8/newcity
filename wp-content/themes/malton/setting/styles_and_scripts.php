@@ -30,7 +30,7 @@ function theme_name_scripts() {
 	wp_enqueue_style( 'fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic' );
 	
 	wp_enqueue_style( 'fancybox', get_template_directory_uri() . '/fancybox/source/jquery.fancybox.css' );
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.css' );	
+	wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.css', array(), '1.0.1' );	
 	
 	//Библиотека гугл карты
 	wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAoIhlfl0vA6Uv0DuIgbriry2cZYDbNw2g' );
@@ -47,7 +47,7 @@ function theme_name_scripts() {
 	//wrap-jcarousel и все что нужно для этого плагина
 	wp_enqueue_script( 'jcarousel', get_template_directory_uri() . '/js/jcarousel/jquery.jcarousel.min.js' );
 	wp_enqueue_script( 'touchSwipe', get_template_directory_uri() . '/js/jcarousel/jquery.touchSwipe.min.js' );
-	wp_enqueue_script( 'wrap-jcarousel', get_template_directory_uri() . '/js/jcarousel/jquery.wrap.jcarousel.js' );
+	wp_enqueue_script( 'wrap-jcarousel', get_template_directory_uri() . '/js/jcarousel/jquery.wrap.jcarousel.js', array(), '1.0.1' );
 	
 	
 	//bootstrap
@@ -69,7 +69,7 @@ function theme_name_scripts() {
 	//wp_enqueue_script( 'stellar', get_template_directory_uri() . '/js/jquery.stellar-paralax.min.js' );	
 	
 	//Скроллбар
-	//wp_enqueue_script( 'jscrollpane', get_template_directory_uri() . '/js/jquery.jscrollpane.min.js' );	
+	wp_enqueue_script( 'jscrollpane', get_template_directory_uri() . '/js/jquery.jscrollpane.min.js' );	
 	//Скролбар из которого можно сделать слайдер с баром с автодоводом
 	wp_enqueue_script( 'mCustomScrollbar', get_template_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js' );
 	
@@ -79,7 +79,7 @@ function theme_name_scripts() {
 	//Инициализация всего
 	wp_enqueue_script( 'svg', get_template_directory_uri() . '/js/snap.svg-min.js' );
 	wp_enqueue_script( 'maskedinput', get_template_directory_uri() . '/js/jquery.maskedinput.min.js' );
-	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js' );
+	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array(), '1.0.3' );
 	wp_enqueue_script( 'map', get_template_directory_uri() . '/js/map.js' );
 	
 	
